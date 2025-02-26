@@ -1,0 +1,38 @@
+# This is a basic workflow to help you get started with Actions
+
+name: SM8250 Qualcomm Technologies, Inc. QRD8250
+
+# Controls when the workflow will run
+on:
+#  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'Platforms/KonaPkg/Device/qcom-qrd8250/**'
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Indicate that we are running in CI
+env:
+  WM_CI_BUILD: true
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-22.04
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+      - name: Build SB/NOSB uefi for qti qrd8250.
+        run: bash scripts/ci_setup.sh && ./build_uefi.py -d qcom-qrd8250
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: uefi-images-qrd8250
+          path: Build/*/ci_artifacts
+          compression-level: 9

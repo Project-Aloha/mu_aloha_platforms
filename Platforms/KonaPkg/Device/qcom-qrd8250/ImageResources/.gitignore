@@ -1,0 +1,7 @@
+SM8250_EFI_NOSB.fd
+SM8250_EFI_SB.fd
+kernel
+payload.bin
+qcom-kona.img
+qcom-qrd8250_NOSB.img
+qcom-qrd8250_SB.img
