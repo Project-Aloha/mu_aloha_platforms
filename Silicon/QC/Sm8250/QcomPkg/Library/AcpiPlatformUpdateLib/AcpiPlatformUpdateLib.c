@@ -11,7 +11,6 @@
 #include <Library/UefiBootServicesTableLib.h>
 #include <Library/UefiLib.h>
 
-#include <Library/MemoryMapHelperLib.h>
 #include <Library/RFSProtectionLib.h>
 
 #include <Protocol/EFIChipInfo.h>
@@ -33,7 +32,7 @@ PlatformUpdateAcpiTables(VOID)
   UINT16                              SDFE  = 0;
   UINT16                              SIDM  = 0;
   UINT32                              SUFS  = 0xFFFFFFFF;
-  UINT32                              PUS3  = 0x0; // If your device have ufs3 should enable this.
+  UINT32                              PUS3  = FixedPcdGet32(PcdStorageHasUFS3);
   UINT32                              SUS3  = 0xFFFFFFFF;
   //UINT32                             *pSIDT = (UINT32 *)0x784130;
   //UINT32                              SIDT  = (*pSIDT & 0xFF00000) >> 20;
