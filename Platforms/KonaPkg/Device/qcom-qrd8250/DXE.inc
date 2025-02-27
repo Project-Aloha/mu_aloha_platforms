@@ -44,8 +44,8 @@
     INF KonaPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/UsbfnDwc3Dxe/UsbfnDwc3Dxe.inf
     INF KonaPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/UsbMsdDxe/UsbMsdDxe.inf
     INF KonaPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/UsbPwrCtrlDxe/UsbPwrCtrlDxe.inf
-    INF QcomPkg/PatchedBinaries/UFSDxe.inf
-    INF QcomPkg/PatchedBinaries/UsbConfigDxe.inf
+    INF KonaPkg/Device/$(TARGET_DEVICE)/PatchedBinaries/UFSDxe.inf
+    INF KonaPkg/Device/$(TARGET_DEVICE)/PatchedBinaries/UsbConfigDxe.inf
     INF AndromedaPkg/Driver/GpioButtons/GpioButtons.inf
     INF AndromedaPkg/Driver/SimpleFbDxe/SimpleFbDxe.inf
 
