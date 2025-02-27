@@ -34,9 +34,8 @@ PlatformUpdateAcpiTables(VOID)
   UINT32                              SUFS  = 0xFFFFFFFF;
   UINT32                              PUS3  = FixedPcdGet32(PcdStorageHasUFS3);
   UINT32                              SUS3  = 0xFFFFFFFF;
-  //UINT32                             *pSIDT = (UINT32 *)0x784130;
-  //UINT32                              SIDT  = (*pSIDT & 0xFF00000) >> 20;
-  UINT32                              SIDT  = 0; // TODO: Fix me!
+  UINT32                             *pSIDT = (UINT32 *)0x784198;
+  UINT32                              SIDT  = (*pSIDT & 0xFF00000) >> 20;
   UINT32                              SOSN1 = 0;
   UINT32                              SOSN2 = 0;
   UINT32                              TPMA  = 0x1;
