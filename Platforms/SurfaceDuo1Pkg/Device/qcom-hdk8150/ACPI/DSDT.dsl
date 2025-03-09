@@ -378,7 +378,7 @@ DefinitionBlock ("", "DSDT", 2, "QCOMM ", "SDM8150 ", 0x00000003)
                 \_SB.SPMI, 
                 \_SB.PMIC
             })
-            Name (_HID, "QCOM05CE")  // _HID: Hardware ID
+            Name (_HID, "QCOM05E5")  // _HID: Hardware ID
             Alias (\_SB.PSUB, _SUB)
         }
 
@@ -911,7 +911,7 @@ DefinitionBlock ("", "DSDT", 2, "QCOMM ", "SDM8150 ", 0x00000003)
                         "\\_SB.PM01", 0x00, ResourceConsumer, ,
                         )
                         {   // Pin list
-                            0x00F8
+                            0x00FA
                         }
                     GpioInt (Edge, ActiveHigh, SharedAndWake, PullNone, 0x0000,
                         "\\_SB.PM01", 0x00, ResourceConsumer, ,
