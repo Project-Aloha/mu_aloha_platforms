@@ -53,6 +53,12 @@ EFI_STATUS FindTeAddr(TE_INFO_STRUCT *TEInfo)
           // Store Address
           TEInfo->TEBuffer      = (VOID *)SecurityCoreAddress;
           TEInfo->programBuffer = (VOID *)ProgramBufferAddress;
+
+          // TODO: Fix this properly! - For now we use a generous size
+          UINTN len = 0x40000;
+
+          TEInfo->fileSize = len;
+          TEInfo->teSize   = len - sizeof(EFI_TE_IMAGE_HEADER);
           goto exitLoop;
         }
       }
@@ -205,8 +211,8 @@ EFI_STATUS find_protocol_xbldt(
     TE_INFO_STRUCT *Binary, GUID *KeyGuid, UINT64 *TargetAddress)
 {
   // Find Guid Offset
-  UINT32 guid_offset = 0;
-  EFI_STATUS status = find_guid_in_buffer(Binary, KeyGuid, &guid_offset);
+  UINT32     guid_offset = 0;
+  EFI_STATUS status      = find_guid_in_buffer(Binary, KeyGuid, &guid_offset);
   if (EFI_ERROR(status)) {
     DEBUG((DEBUG_WARN, "XBLDT guid not found in buffer\n"));
     return EFI_NOT_FOUND;
