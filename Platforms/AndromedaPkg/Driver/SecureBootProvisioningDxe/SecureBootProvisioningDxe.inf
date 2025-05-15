@@ -17,9 +17,11 @@
   MdePkg/MdePkg.dec
   MsCorePkg/MsCorePkg.dec
   AndromedaPkg/AndromedaPkg.dec
+  CryptoPkg/CryptoPkg.dec
 
 [LibraryClasses]
   BaseLib
+  BaseCryptLib
   DebugLib
   DxeServicesLib
   MuSecureBootKeySelectorLib
