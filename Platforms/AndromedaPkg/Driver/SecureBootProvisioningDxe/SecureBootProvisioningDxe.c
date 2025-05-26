@@ -14,6 +14,8 @@
 #include <Pi/PiFirmwareFile.h>
 
 #include <Library/BaseLib.h>
+#include <Library/BaseCryptLib.h>
+#include <Library/BaseMemoryLib.h>
 #include <Library/DebugLib.h>
 #include <Library/DxeServicesLib.h>
 #include <Library/UefiBootServicesTableLib.h>
@@ -24,6 +26,7 @@
 #include <Library/MuSecureBootKeySelectorLib.h>
 
 #include <Guid/GlobalVariable.h>
+#include <Guid/FileInfo.h>
 
 //
 // Global variables.
@@ -74,6 +77,13 @@ TryWritePlatformSiPolicy(EFI_HANDLE SfsHandle)
   EFI_GUID *FileGuid             = NULL;
   UINT8    *mSiPolicyDefault     = NULL;
   UINTN     mSiPolicyDefaultSize = 0;
+  UINT8     mSiPolicyDefaultHash[SHA256_DIGEST_SIZE];
+
+  UINT8    *SiPolicyEfiSfs          = NULL;
+  UINTN     SiPolicyEfiSfsInfoSize  = 0;
+  UINTN     SiPolicyEfiSfsSize      = 0;
+  UINT8     SiPolicyEfiSfsHash[SHA256_DIGEST_SIZE];
+
   FileGuid                       = PcdGetPtr(PcdSystemIntegrityPolicyFile);
 
   // Get the SiPolicy image from FV.
@@ -146,11 +156,41 @@ TryWritePlatformSiPolicy(EFI_HANDLE SfsHandle)
     if (!IsSecureBootOn()) {
       PayloadFileProtocol->Delete(PayloadFileProtocol);
       Status = EFI_SUCCESS;
+      goto exit;
     } else {
-      Status = SetSecureBootConfig(0);
+      // Get the size of SiPolicy.p7b from the EfiSfs Volume.
+      Status = PayloadFileProtocol->GetInfo(
+          PayloadFileProtocol, &gEfiFileInfoGuid, &SiPolicyEfiSfsInfoSize, NULL);
+    
+      if (Status == EFI_BUFFER_TOO_SMALL) {
+        EFI_FILE_INFO *FileInfo = AllocatePool(SiPolicyEfiSfsInfoSize);
+
+        Status = PayloadFileProtocol->GetInfo(
+            PayloadFileProtocol, &gEfiFileInfoGuid, &SiPolicyEfiSfsInfoSize, FileInfo);
+        SiPolicyEfiSfsSize = FileInfo->FileSize;
+
+        if (!EFI_ERROR(Status)) {
+            DEBUG((EFI_D_ERROR, "SiPolicyEfiSfsSiz Size: %ld kilobyte \n", SiPolicyEfiSfsSize));
+        }
+      }
+
+      SiPolicyEfiSfs = AllocatePool(SiPolicyEfiSfsSize);
+      Status = PayloadFileProtocol->Read(
+          PayloadFileProtocol, &SiPolicyEfiSfsSize, SiPolicyEfiSfs);
+
+      Sha256HashAll(SiPolicyEfiSfs, SiPolicyEfiSfsSize, SiPolicyEfiSfsHash);
+      Sha256HashAll(mSiPolicyDefault, mSiPolicyDefaultSize, mSiPolicyDefaultHash);
+
+      // Compare the SiPolicy files to determine whether an update is needed.
+      if (CompareMem(SiPolicyEfiSfsHash, mSiPolicyDefaultHash, SHA256_DIGEST_SIZE) == 0) {
+        Status = SetSecureBootConfig(0);
+        goto exit;
+      } else {
+        // If an update is required, then delete the original SiPolicy first.
+        PayloadFileProtocol->Delete(PayloadFileProtocol);
+      }
     }
-    goto exit;
-  // File does not exist, if SB is off, do not add the file.
+    // File does not exist, if SB is off, do not add the file.
   } else if (!IsSecureBootOn()) {
       Status = EFI_SUCCESS;
       goto exit;
