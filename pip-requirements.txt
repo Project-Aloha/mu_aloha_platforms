@@ -15,7 +15,7 @@
 edk2-pytool-library==0.22.5
 edk2-pytool-extensions==0.28.0
 xmlschema==4.1.0
-regex==2025.8.29
+regex==2025.9.1
 pygount==3.1.0
 
 # Optional Levenshtein, used by build_uefi.py
