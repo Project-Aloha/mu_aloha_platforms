@@ -28,11 +28,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
       - name: Build SB/NOSB uefi for eebbk s6
-        run: bash scripts/ci_setup.sh && ./build_uefi.py -d eebbk-sm6150-s6
+        run: bash scripts/ci_setup.sh && ./build_uefi.py -d eebbk-sm6150-s6 -t DEBUG
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: uefi-images-surya
+          name: uefi-images-sm6150-s6
           path: Build/*/ci_artifacts
           compression-level: 9
