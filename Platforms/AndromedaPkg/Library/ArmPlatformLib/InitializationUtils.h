@@ -10,4 +10,8 @@
 
 VOID EarlyInitialization(VOID);
 
+UINTN
+ArmPlatformIsPrimaryCore (
+  IN UINTN MpId
+  );
 #endif /* _INITIALIZATION_UTILS_H_ */

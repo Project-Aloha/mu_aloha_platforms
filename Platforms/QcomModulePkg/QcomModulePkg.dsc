@@ -48,7 +48,6 @@
 
 [LibraryClasses.common]
   DebugLib|MdePkg/Library/UefiDebugLibConOut/UefiDebugLibConOut.inf
-  BaseStackCheckLib|MdePkg/Library/BaseStackCheckLib/BaseStackCheckLib.inf
   DebugPrintErrorLevelLib|MdePkg/Library/BaseDebugPrintErrorLevelLib/BaseDebugPrintErrorLevelLib.inf
   MemoryAllocationLib|MdePkg/Library/UefiMemoryAllocationLib/UefiMemoryAllocationLib.inf
   BaseLib|MdePkg/Library/BaseLib/BaseLib.inf
@@ -185,7 +184,7 @@
 
 			FdtLib|EmbeddedPkg/Library/FdtLib/FdtLib.inf
 			LibUfdt|QcomModulePkg/Library/LibUfdt/LibUfdt.inf
-			ArmSmcLib|ArmPkg/Library/ArmSmcLib/ArmSmcLib.inf
+			ArmSmcLib|MdePkg/Library/ArmSmcLib/ArmSmcLib.inf
 			BootLib|QcomModulePkg/Library/BootLib/BootLib.inf
 			StackCanary|QcomModulePkg/Library/StackCanary/StackCanary.inf
 			FastbootLib|QcomModulePkg/Library/FastbootLib/FastbootLib.inf

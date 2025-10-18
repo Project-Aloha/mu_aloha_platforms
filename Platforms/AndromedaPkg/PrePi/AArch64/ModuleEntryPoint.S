@@ -5,7 +5,7 @@
 //
 //
 
-#include <AsmMacroIoLibV8.h>
+#include <AsmMacroLib.h>
 
 .text
 .align 3
@@ -84,7 +84,7 @@ _ClearStack:
   add sp, x2, xzr                                /* Initalize SP */
 
 _EnableCache:
-  bl ArmInvalidateDataCache
+  bl ASM_PFX(ArmDisableDataCache)
   bl ASM_PFX(ArmEnableInstructionCache)
   bl ASM_PFX(ArmEnableDataCache)
 

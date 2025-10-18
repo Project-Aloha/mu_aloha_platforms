@@ -45,7 +45,6 @@
   DebugAgentLib
   PrePiLib
   ArmPlatformLib
-  ArmPlatformStackLib
   MemoryAllocationLib
   HobLib
   PrePiHobListPointerLib
@@ -65,7 +64,6 @@
 
 [FeaturePcd]
   gEmbeddedTokenSpaceGuid.PcdPrePiProduceMemoryTypeInformationHob
-  gArmPlatformTokenSpaceGuid.PcdSendSgiToBringUpSecondaryCores
 
 [Pcd]
   gEfiMdeModulePkgTokenSpaceGuid.PcdFirmwareVersionString
@@ -80,7 +78,6 @@
   gArmTokenSpaceGuid.PcdFvSize
 
   gArmPlatformTokenSpaceGuid.PcdCPUCorePrimaryStackSize
-  gArmPlatformTokenSpaceGuid.PcdCPUCoreSecondaryStackSize
 
   gArmPlatformTokenSpaceGuid.PcdSystemMemoryUefiRegionSize
 
@@ -98,7 +95,7 @@
   gEmbeddedTokenSpaceGuid.PcdMemoryTypeEfiLoaderCode
   gEmbeddedTokenSpaceGuid.PcdMemoryTypeEfiLoaderData
 
-  gArmTokenSpaceGuid.PcdCpuVectorBaseAddress
+  gAndromedaPkgTokenSpaceGuid.PcdCpuVectorBaseAddress
 
   gEmbeddedTokenSpaceGuid.PcdPrePiStackBase
   gEmbeddedTokenSpaceGuid.PcdPrePiStackSize

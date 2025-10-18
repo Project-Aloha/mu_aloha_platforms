@@ -117,7 +117,7 @@ READ_LOCK_STATUS   = TRUE
 
   INF AdvLoggerPkg/AdvancedFileLogger/AdvancedFileLogger.inf
 
-  INF ArmPkg/Drivers/ArmGic/ArmGicDxe.inf
+  INF ArmPkg/Drivers/ArmGicDxe/ArmGicDxe.inf
   INF ArmPkg/Drivers/CpuDxe/CpuDxe.inf
   INF ArmPkg/Drivers/TimerDxe/TimerDxe.inf
 
