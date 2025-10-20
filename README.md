@@ -242,6 +242,12 @@ sudo docker run -v $(pwd):/build/ -it mu:v1
 
 ### Snapdragon 730/730G/732G (*SM7150*)
 
+#### Qualcomm Technologies, Inc. Devices
+
+| Device                               | Target name            | DSDT Support    | Maintainers                                        |
+|--------------------------------------|------------------------|-----------------|----------------------------------------------------|
+| Qualcomm Technologies, Inc. QRD 7150 | qcom-qrd7150           | ✅              | [qaz6750](https://github.com/qaz6750)              |
+
 #### Xiaomi Devices
 
 | Device                               | Target name            | DSDT Support    | Contributors                                       |
