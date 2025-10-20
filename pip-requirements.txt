@@ -19,7 +19,7 @@ regex==2025.7.34
 pygount==3.1.0
 pywin32==311; sys_platform == 'win32'
 setuptools==80.9.0
-poetry==2.1.4
+poetry==2.2.1
 fdt==0.3.3
 
 # Optional Levenshtein, used by build_uefi.py
