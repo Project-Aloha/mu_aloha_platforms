@@ -60,8 +60,8 @@ pip install --upgrade -r pip-requirements.txt
 *Alternatively, use docker if you don't have Ubuntu 24.04 environment*
 
 ```
-sudo docker build -t mu:v1 .
-sudo docker run -v $(pwd):/build/ -it mu:v1
+docker build -t mu:v1 .
+docker run -v $(pwd):/build/ -it mu:v1
 ```
 
 *Then finish the following process in docker environment*
