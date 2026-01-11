@@ -118,9 +118,6 @@ READ_LOCK_STATUS   = TRUE
   INF EmbeddedPkg/Drivers/DtPlatformDxe/DtPlatformDxe.inf
   !include $(PACKAGE_NAME)/Include/FDT.inc
 
-  # Project Crane Test drivers
-  !include CranePkg/Crane.fdf.inc
-
   INF MdeModulePkg/Universal/EsrtFmpDxe/EsrtFmpDxe.inf
 
   !include AndromedaPkg/Frontpage.fdf.inc
