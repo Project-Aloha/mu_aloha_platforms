@@ -19,9 +19,6 @@ APRIORI DXE {
     # Add system memories
     INF AndromedaPkg/Driver/RamPartitionDxe/RamPartitionDxe.inf
 
-    # Crane Drivers
-    !include CranePkg/Crane.Aprioir.inc
-
     INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/SmemDxe/SmemDxe.inf
     INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/DALSYSDxe/DALSYSDxe.inf
     INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/HWIODxe/HWIODxe.inf

@@ -26,7 +26,7 @@
   gEmbeddedTokenSpaceGuid.PcdInterruptBaseAddress|0x09BC0000
   gEmbeddedTokenSpaceGuid.PcdPrePiCpuIoSize|44
 
-  gAndromedaPkgTokenSpaceGuid.PcdSmbiosProcessorModel|"Snapdragon (TM) 8 Gen1 @ 3.00 GHz"
+  gAndromedaPkgTokenSpaceGuid.PcdSmbiosProcessorModel|"Snapdragon (TM) 8 Gen 1 @ 3.00 GHz"
   gAndromedaPkgTokenSpaceGuid.PcdSmbiosProcessorRetailModel|"SM8450"
 
   gArmPlatformTokenSpaceGuid.PcdCoreCount|8
