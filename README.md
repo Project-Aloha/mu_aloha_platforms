@@ -254,6 +254,11 @@ sudo docker run -v $(pwd):/build/ -it mu:v1
 |--------------------------------------|------------------------|-----------------|----------------------------------------------------|
 | Xiaomi POCO X3                       | xiaomi-surya           | ✅              | [remtrik](https://github.com/remtrik)              |
 
+#### EEBBK Devices
+
+| Device                               | Target name            | DSDT Support    | Contributors                                       |
+|--------------------------------------|------------------------|-----------------|----------------------------------------------------|
+| EEBBK S6                       | eebbk-h130           | ❌              | [XiKoTaSu](https://github.com/XiKoTaSu)&[snapdragon730](https://github.com/snapdragon730)|
 
 ### Snapdragon 778G/7c+ Gen 3 (*SM7325*/*SC7280*)
 
