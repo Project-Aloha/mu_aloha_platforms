@@ -18,7 +18,7 @@ APRIORI DXE {
 
     INF AndromedaPkg/Driver/RamPartitionDxe/RamPartitionDxe.inf
     INF MooreaPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/SmemDxe/SmemDxe.inf
-    INF MooreaPkg/Device/$(TARGET_DEVICE)/PatchedBinaries/DALSYSDxe/DALSYSDxe.inf
+    INF MooreaPkg/Device/$(TARGET_DEVICE)/PatchedBinaries/DALSYSDxe.inf
     INF MooreaPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/HWIODxe/HWIODxe.inf
     INF MooreaPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/ChipInfoDxe/ChipInfoDxe.inf
     INF MooreaPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/PlatformInfoDxe/PlatformInfoDxe.inf
