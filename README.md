@@ -26,7 +26,7 @@ Applicable to all supported targets unless noted.
 
 ## What can you do?
 
-Please see https://Project-Aloha.github.io for some tutorials.
+Please see https://aloha.firmware.icu/ for some tutorials.
 
 ## Build
 
