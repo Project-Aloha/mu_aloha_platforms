@@ -37,3 +37,4 @@
 [submodule "Platforms/CranePkg"]
 	path = Platforms/CranePkg
 	url = https://github.com/Project-Aloha/CrDK
+	branch = main
