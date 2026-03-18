@@ -126,6 +126,7 @@ APRIORI DXE {
 
 !if $(USE_SIMPLEFBDXE) == false
     INF MooreaPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/DisplayDxe/DisplayDxe.inf
+    INF AndromedaPkg/Driver/DisplayCallerDxe/DisplayCallerDxe.inf
 !else 
     INF AndromedaPkg/Driver/SimpleFbDxe/SimpleFbDxe.inf
 !endif
