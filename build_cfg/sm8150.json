@@ -2,7 +2,7 @@
     "platform": "Sm8150",
     "package" : "SurfaceDuo1Pkg",
     "bootshim": {
-        "UEFI_BASE": "0x9F800000",
-        "UEFI_SIZE": "0x00700000"
+        "UEFI_BASE": "0x9FC00000",
+        "UEFI_SIZE": "0x00300000"
     }
 }
