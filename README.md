@@ -204,7 +204,6 @@ sudo docker run -v $(pwd):/build/ -it mu:v1
 |--------------------------------------|------------------------|-----------------|----------------------------------------------------|
 | Samsung Galaxy Fold                  | samsung-winner         | ✅              | [Ost268](https://github.com/Ost268)                |
 | Samsung Galaxy S10                   | samsung-beyond1qlte    | ✅              | [Ww](https://github.com/Idonotkno)                 |
-| Samsung Galaxy Tab S6                | samsung-gts6l          | ✅              | None                                               |
 | Samsung Galaxy Tab S6 WIFI           | samsung-gts6lwifi      | ✅              | [qaz6750](https://github.com/qaz6750)              |
 
 #### Smartisan Devices
