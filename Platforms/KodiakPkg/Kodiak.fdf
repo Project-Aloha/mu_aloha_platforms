@@ -119,9 +119,9 @@ READ_LOCK_STATUS   = TRUE
 
   !include AndromedaPkg/Frontpage.fdf.inc
 
-  FILE FREEFORM = PCD(gMsCorePkgTokenSpaceGuid.PcdRegulatoryGraphicFileGuid) {
-    SECTION RAW = KodiakPkg/Include/Resources/RegulatoryLogos.png
-  }
+#  FILE FREEFORM = PCD(gMsCorePkgTokenSpaceGuid.PcdRegulatoryGraphicFileGuid) {
+#    SECTION RAW = $(PACKAGE_NAME)/Include/Resources/RegulatoryLogos.png
+#  }
 
   INF AdvLoggerPkg/AdvancedFileLogger/AdvancedFileLogger.inf
   INF ArmPkg/Drivers/ArmGicDxe/ArmGicDxe.inf
