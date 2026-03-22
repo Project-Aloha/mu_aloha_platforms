@@ -130,25 +130,6 @@ sudo docker run -v $(pwd):/build/ -it mu:v1
 |--------------------------------------|------------------------|-----------------|----------------------------------------------------|
 | ASUS ROG2                            | asus-I001DC            | ✅              | [sunflower2333](https://github.com/sunflower2333)  |
 
-#### Axon Devices
-
-| Device                               | Target name            | DSDT Support    | Contributors                                       |
-|--------------------------------------|------------------------|-----------------|----------------------------------------------------|
-| Axon Stage 5G                        | kakao-pine             | ❌              | [AKA](https://github.com/AKAsaliza)                |
-
-#### BlackShark Devices
-
-| Device                               | Target name            | DSDT Support    | Contributors                                       |
-|--------------------------------------|------------------------|-----------------|----------------------------------------------------|
-| BlackShark 2                         | blackshark-skywalker   | ❌              | None                                               |
-| BlackShark 2 Pro                     | blackshark-darklighter | ❌              | None                                               |
-
-#### HTC Devices
-
-| Device                               | Target name            | DSDT Support    | Contributors                                       |
-|--------------------------------------|------------------------|-----------------|----------------------------------------------------|
-| HTC 5G Hub                           | htc-rtx                | ❌              | None                                               |
-
 #### LG Devices
 
 | Device                               | Target name            | DSDT Support    | Contributors                                       |
@@ -159,20 +140,11 @@ sudo docker run -v $(pwd):/build/ -it mu:v1
 | LG V50                               | lg-flashlmdd           | ✅              | [AKA](https://github.com/AKAsaliza)                |
 | LG V50S                              | lg-mh2lm5g             | ✅              | [AKA](https://github.com/AKAsaliza)                |
 
-#### Meizu Devices
-
-| Device                               | Target name            | DSDT Support    | Contributors                                       |
-|--------------------------------------|------------------------|-----------------|----------------------------------------------------|
-| Meizu 16s                            | meizu-m971q            | ❌              | None                                               |
-| Meizu 16T                            | meizu-m928q            | ❌              | None                                               |
-
 #### Nubia Devices
 
 | Device                               | Target name            | DSDT Support    | Contributors                                       |
 |--------------------------------------|------------------------|-----------------|----------------------------------------------------|
 | Nubia Mini 5G                        | nubia-tp1803           | ✅              | [Alula](https://github.com/alula)                  |
-| Nubia RedMagic 3                     | nubia-nx629j           | ❌              | None                                               |
-| Nubia RedMagic 3S                    | nubia-nx629jv1s        | ❌              | None                                               |
 
 #### OnePlus Devices
 
@@ -188,14 +160,12 @@ sudo docker run -v $(pwd):/build/ -it mu:v1
 
 | Device                               | Target name            | DSDT Support    | Contributors                                       |
 |--------------------------------------|------------------------|-----------------|----------------------------------------------------|
-| OPPO Reno 10X                        | oppo-op46c3            | ❌              | None                                               |
 | OPPO Reno ACE                        | oppo-pclm10            | ✅              | None                                               |
 
 #### Realme Devices
 
 | Device                               | Target name            | DSDT Support    | Contributors                                       |
 |--------------------------------------|------------------------|-----------------|----------------------------------------------------|
-| Realme X2 Pro                        | realme-rmx1931         | ❌              | None                                               |
 | Realme X3 SuperZoom                  | realme-rmx2086         | ✅              | None                                               |
 
 #### Samsung Devices
@@ -206,19 +176,12 @@ sudo docker run -v $(pwd):/build/ -it mu:v1
 | Samsung Galaxy S10                   | samsung-beyond1qlte    | ✅              | [Ww](https://github.com/Idonotkno)                 |
 | Samsung Galaxy Tab S6 WIFI           | samsung-gts6lwifi      | ✅              | [qaz6750](https://github.com/qaz6750)              |
 
-#### Smartisan Devices
-
-| Device                               | Target name            | DSDT Support    | Contributors                                       |
-|--------------------------------------|------------------------|-----------------|----------------------------------------------------|
-| Smartisan Pro 3                      | smartisan-aries        | ❌              | None                                               |
-
 #### Xiaomi Devices
 
 | Device                               | Target name            | DSDT Support    | Contributors                                       |
 |--------------------------------------|------------------------|-----------------|----------------------------------------------------|
 | Xiaomi 9                             | xiaomi-cepheus         | ✅              | [qaz6750](https://github.com/qaz6750)              |
 | Xiaomi K20 Pro                       | xiaomi-raphael         | ✅              | [Degdag](https://github.com/degdag) & [sunflower2333](https://github.com/sunflower2333) |
-| Xiaomi Mix Alpha u2                  | xiaomi-avenger         | ❌              | None                                               |
 | Xiaomi Mix3 5G                       | xiaomi-andromeda       | ✅              | None                                               |
 | Xiaomi Mix3.5                        | xiaomi-hercules        | ✅              | None                                               |
 | Xiaomi Pad 5                         | xiaomi-nabu            | ✅              | [Map220v](https://github.com/map220v)              |
