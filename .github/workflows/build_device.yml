@@ -23,13 +23,13 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Build SecureBoot and No SecureBoot UEFI for ${{ inputs.target }}
         run: bash scripts/ci_setup.sh && ./build_uefi.py -d ${{ inputs.target }}
 
       - name: Upload ${{ inputs.target }}'s Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: uefi-images-${{ inputs.target }}
           path: Build/*/ci_artifacts

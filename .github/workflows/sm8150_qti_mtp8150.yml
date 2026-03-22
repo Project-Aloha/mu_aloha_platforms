@@ -26,12 +26,12 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Build SB/NOSB uefi for qti mtp8150.
         run: bash scripts/ci_setup.sh && ./build_uefi.py -d qcom-mtp8150
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: uefi-images-mtp8150
           path: Build/*/ci_artifacts
