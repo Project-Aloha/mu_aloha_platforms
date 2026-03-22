@@ -16,7 +16,7 @@ FILE FREEFORM = 7E374E25-8E01-4FEE-87F2-390C23C606CD {
 #   SECTION RAW = SurfaceDuoACPI/QcomACPI/8150/builtin/TPM2.aml
 #   SECTION RAW = SurfaceDuoACPI/QcomACPI/8150/builtin/XSDT.aml
     SECTION RAW = SurfaceDuoACPI/QcomACPI/common/builtin/SSDT.aml
-    SECTION RAW = SurfaceDuoACPI/QcomACPI/common/builtin/TPMDev.dat
-    SECTION RAW = SurfaceDuoACPI/QcomACPI/common/builtin/SoftwareTpm2Table.aml
+#    SECTION RAW = SurfaceDuoACPI/QcomACPI/common/builtin/TPMDev.dat
+#    SECTION RAW = SurfaceDuoACPI/QcomACPI/common/builtin/SoftwareTpm2Table.aml
     SECTION UI = "AcpiTables"
 }
