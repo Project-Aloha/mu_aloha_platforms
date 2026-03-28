@@ -1,0 +1,18 @@
+[PcdsFixedAtBuild.common]
+gAndromedaPkgTokenSpaceGuid.PcdMipiFrameBufferWidth|1600
+gAndromedaPkgTokenSpaceGuid.PcdMipiFrameBufferHeight|2560
+
+# Smbios Info
+gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemBrand|"Samsung"
+gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemModel|"Galaxy Tab S7 FE"
+gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemRetailModel|"gts7fewifi"
+gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"SM-T733"
+
+gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"gts7fewifi"
+
+# Display Caller
+#gAndromedaPkgTokenSpaceGuid.PcdDisplayCallerExitDisableDisplay|FALSE
+#gAndromedaPkgTokenSpaceGuid.PcdDisplayCallerStallBeforeEnable|0
+
+# Storage
+gAndromedaPkgTokenSpaceGuid.PcdStorageHasUFS3|0
