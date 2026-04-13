@@ -11,4 +11,4 @@ gAndromedaPkgTokenSpaceGuid.PcdSmbiosProcessorModel|"Snapdragon (TM) 860 @ 2.96 
 gAndromedaPkgTokenSpaceGuid.PcdSmbiosProcessorRetailModel|"SM8150-AC"
 gAndromedaPkgTokenSpaceGuid.PcdSmbiosBoardModel|"K82"
 
-gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"Xiaomi Pad 5"
+gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"nabu"

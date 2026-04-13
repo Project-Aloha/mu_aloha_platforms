@@ -11,4 +11,4 @@ gAndromedaPkgTokenSpaceGuid.PcdSmbiosProcessorModel|"Snapdragon (TM) 860 @ 2.96 
 gAndromedaPkgTokenSpaceGuid.PcdSmbiosProcessorRetailModel|"SM8150-AC"
 gAndromedaPkgTokenSpaceGuid.PcdSmbiosBoardModel|"J20S"
 
-gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"Poco X3 Pro"
+gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"vayu"

@@ -11,4 +11,4 @@ gAndromedaPkgTokenSpaceGuid.PcdSmbiosProcessorModel|"Snapdragon (TM) 732G @ 2.3 
 gAndromedaPkgTokenSpaceGuid.PcdSmbiosProcessorRetailModel|"SM7150-AC"
 gAndromedaPkgTokenSpaceGuid.PcdSmbiosBoardModel|"J20"
 
-gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"POCO X3"
+gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"surya"
