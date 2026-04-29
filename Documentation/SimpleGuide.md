@@ -173,7 +173,7 @@ ___
 ## **Part 3.** Patch binaries.
   - Which binary needs Patch ?
     * If your phone stack while loading PILDxe, patch UFSDxe.
-    * If your phone can not connect with PC via KDNET, or USB not working in windows(with externel power), patch UsbConfigDxe.
+    * If your phone can not connect with PC via KDNET, or USB not working in windows(with external power), patch UsbConfigDxe.
     * If your phone can not use button at uefi stage, please patch ButtonsDxe.
   - Where to patch ?
     * The most simple way to know where to patch:
