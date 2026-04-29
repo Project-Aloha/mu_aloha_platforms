@@ -1,4 +1,4 @@
-## This Doc will indroduce some Defines you may need in Defines.dsc.inc
+## This Doc will introduce some Defines you may need in Defines.dsc.inc
 ___
 > **HAS_MLVM**  
   * Type
