@@ -233,17 +233,19 @@ RamPartitionDxeInitialize(
   UINTN Index = 1;
 
   // Get RAM Partition Info
-  if (RamPartitionEntries == NULL) {
-      NumPartitionEntries = 0;
-      Status = GetRamPartitions(&RamPartitionEntries, &NumPartitionEntries);
-  }
+   NumPartitionEntries = 0;
+   Status = GetRamPartitions(&RamPartitionEntries, &NumPartitionEntries);
+   if(!EFI_ERROR(Status)){
+      DEBUG((EFI_D_ERROR, "Failed to initialize RamPartitionDxe! Status: %r\n", Status));
+      return Status;
+   }
 
   // Update Extended Memory Map, although it's meaningless.
-  DEBUG((EFI_D_ERROR, "RAM Partitions\n"));
+  DEBUG((EFI_D_INFO, "RAM Partitions\n"));
   if(!EFI_ERROR(Status)){
       for (i = 0; i < NumPartitionEntries; i++) {
-          DEBUG((EFI_D_ERROR, "RAM Entry %d: Base:  0x%016lx ", i, RamPartitionEntries[i].Base));
-          DEBUG((EFI_D_ERROR, "AvailableLength: 0x%016lx \n", RamPartitionEntries[i].AvailableLength));
+          DEBUG((EFI_D_INFO, "RAM Entry %d: Base:  0x%016lx ", i, RamPartitionEntries[i].Base));
+          DEBUG((EFI_D_INFO, "AvailableLength: 0x%016lx \n", RamPartitionEntries[i].AvailableLength));
 
 #ifdef HAS_MLVM
         // Update the first MLVM region for 855 Platform.
