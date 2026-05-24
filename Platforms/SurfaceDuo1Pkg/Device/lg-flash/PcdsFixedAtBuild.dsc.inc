@@ -4,11 +4,11 @@ gAndromedaPkgTokenSpaceGuid.PcdMipiFrameBufferHeight|3120
 
 # Smbios Info
 gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemBrand|"LG Electronics"
-gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemModel|"G8"
-gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemRetailModel|"Alpha"
-gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"MP"
+gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemModel|"V50 ThinQ"
+gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemRetailModel|"flash"
+gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"LM-V500"
 
-gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"LGE G8"
+gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"flash"
 
 # Storage
 gAndromedaPkgTokenSpaceGuid.PcdStorageHasUFS3|0

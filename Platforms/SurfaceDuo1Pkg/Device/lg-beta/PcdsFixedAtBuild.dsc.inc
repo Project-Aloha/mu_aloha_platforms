@@ -4,11 +4,11 @@ gAndromedaPkgTokenSpaceGuid.PcdMipiFrameBufferHeight|2248
 
 # Smbios Info
 gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemBrand|"LG Electronics"
-gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemModel|"G8s"
-gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemRetailModel|"betalm"
+gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemModel|"G8S ThinQ"
+gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemRetailModel|"beta"
 gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"MP"
 
-gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"LGE G8s"
+gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"beta"
 
 # Storage
 gAndromedaPkgTokenSpaceGuid.PcdStorageHasUFS3|0

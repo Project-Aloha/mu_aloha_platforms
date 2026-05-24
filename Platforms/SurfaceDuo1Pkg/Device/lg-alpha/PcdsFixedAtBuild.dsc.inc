@@ -1,0 +1,14 @@
+[PcdsFixedAtBuild.common]
+gAndromedaPkgTokenSpaceGuid.PcdMipiFrameBufferWidth|1440
+gAndromedaPkgTokenSpaceGuid.PcdMipiFrameBufferHeight|3120
+
+# Smbios Info
+gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemBrand|"LG Electronics"
+gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemModel|"G8 ThinQ"
+gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemRetailModel|"alpha"
+gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"MP"
+
+gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"alpha"
+
+# Storage
+gAndromedaPkgTokenSpaceGuid.PcdStorageHasUFS3|0
