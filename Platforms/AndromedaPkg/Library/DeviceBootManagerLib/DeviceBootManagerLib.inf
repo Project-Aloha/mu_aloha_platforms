@@ -26,6 +26,7 @@
   MsGraphicsPkg/MsGraphicsPkg.dec
   PcBdsPkg/PcBdsPkg.dec
   DfciPkg/DfciPkg.dec
+  SecurityPkg/SecurityPkg.dec
   ShellPkg/ShellPkg.dec
   MsWheaPkg/MsWheaPkg.dec
   AndromedaPkg/AndromedaPkg.dec
@@ -45,6 +46,7 @@
   MsBootPolicyLib
   MsBootManagerSettingsLib
   MsPlatformPowerCheckLib
+  Tcg2PhysicalPresenceLib
   ThermalServicesLib
   PowerServicesLib
   MsNVBootReasonLib
@@ -60,7 +62,7 @@
   gDfciStartOfBdsNotifyGuid
   gMsBootMenuFormsetGuid
   gEfiEventPreReadyToBootGuid
-  gEfiEventPostReadyToBootGuid
+  gEfiEventAfterReadyToBootGuid
   gDfciSettingsManagerVarNamespace
 
 [Protocols]
