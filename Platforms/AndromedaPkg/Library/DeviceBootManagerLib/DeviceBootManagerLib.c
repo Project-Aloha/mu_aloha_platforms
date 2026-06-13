@@ -38,6 +38,7 @@ SPDX-License-Identifier: BSD-2-Clause-Patent
 #include <Library/PcdLib.h>
 #include <Library/PrintLib.h>
 #include <Library/PowerServicesLib.h>
+#include <Library/Tcg2PhysicalPresenceLib.h>
 #include <Library/ThermalServicesLib.h>
 #include <Library/UefiBootServicesTableLib.h>
 #include <Library/UefiLib.h>
@@ -710,7 +711,7 @@ DeviceBootManagerConstructor (
                   TPL_CALLBACK,
                   PostReadyToBoot,
                   NULL,
-                  &gEfiEventPostReadyToBootGuid,
+                  &gEfiEventAfterReadyToBootGuid,
                   &mPostReadyToBootEvent
                   );
   if (EFI_ERROR (Status)) {
@@ -810,6 +811,8 @@ DeviceBootManagerAfterConsole (
       Status = TpmPp->PromptForConfirmation (TpmPp);
       DEBUG ((DEBUG_ERROR, "%a: Unexpected return from Tpm Physical Presence. Code=%r\n", __FUNCTION__, Status));
     }
+
+    Tcg2PhysicalPresenceLibProcessRequest (NULL);
   }
 
   return GetPlatformConnectList ();
@@ -922,13 +925,13 @@ DeviceBootManagerPriorityBoot (
   AltDeviceBoot = MsBootPolicyLibIsAltBoot ();
   MsBootPolicyLibClearBootRequests ();
 
-  // There are five cases:
+  // There are six cases:
   //   1. Nothing pressed.             return EFI_NOT_FOUND
   //   2. FrontPageBoot                load FrontPage
-  //   2. BootloaderMenuBoot           load Bootloader menu
-  //   3. UFPBoot                      load UFP
-  //   4. AltDeviceBoot                load alternate boot order
-  //   5. Both indicators are present  Load NetworkUnlock
+  //   3. BootloaderMenuBoot           load Bootloader menu
+  //   4. UFPBoot                      load UFP
+  //   5. AltDeviceBoot                load alternate boot order
+  //   6. Both indicators are present  Load NetworkUnlock
 
   if (BootloaderMenuBoot) {
     // Bootloader Menu Option
