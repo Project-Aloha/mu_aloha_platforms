@@ -50,8 +50,6 @@
 #include <Guid/DxeServices.h>
 #include <Library/DxeServicesTableLib.h>
 
-#include <Protocol/ArmPageTableMemoryAllocation.h>
-
 #include <Library/ArmMmuLib.h>
 #include <Library/ArmPlatformLib.h>
 #include <Library/PcdLib.h>
