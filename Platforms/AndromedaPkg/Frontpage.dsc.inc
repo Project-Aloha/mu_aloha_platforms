@@ -30,7 +30,8 @@
   # Backwards compatibility with DFCI V1 functions.
   #
   DfciV1SupportLib|DfciPkg/Library/DfciV1SupportLibNull/DfciV1SupportLibNull.inf
-  FltUsedLib|MdePkg/Library/FltUsedLib/FltUsedLib.inf
+  FltUsedLib|MsCorePkg/Library/FltUsedLib/FltUsedLib.inf
+
   #
   # Library instance that understands the MsXml Settings Schema and providers helper functions
   #
@@ -167,7 +168,7 @@
   # a PCD that controls the enumeration and connection of ConIn's. When true, ConIn is only connected once a console input is requests 
   gEfiMdeModulePkgTokenSpaceGuid.PcdConInConnectOnDemand|TRUE
 
-# Enable SHELL to build instead of just taking the binary
+  # Enable SHELL to build instead of just taking the binary
   gEfiMdePkgTokenSpaceGuid.PcdUefiLibMaxPrintBufferSize|16000
   gEfiShellPkgTokenSpaceGuid.PcdShellProfileMask|0x1f    # All profiles
 
@@ -295,7 +296,7 @@
       NULL|ShellPkg/Library/UefiShellNetwork1CommandsLib/UefiShellNetwork1CommandsLib.inf
       NULL|ShellPkg/Library/UefiShellNetwork2CommandsLib/UefiShellNetwork2CommandsLib.inf
      <PcdsFixedAtBuild>
-     gEfiShellPkgTokenSpaceGuid.PcdShellLibAutoInitialize|FALSE
+      gEfiShellPkgTokenSpaceGuid.PcdShellLibAutoInitialize|FALSE
   }
 
 # UEFI Shell Change End
