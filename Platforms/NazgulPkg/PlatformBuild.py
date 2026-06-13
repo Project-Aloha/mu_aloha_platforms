@@ -48,7 +48,6 @@ class CommonPlatform():
         "Platforms",
         "MU_BASECORE",
         "Common/MU",
-        "Common/MU_TIANO",
         "Common/MU_OEM_SAMPLE",
         "Features/DFCI",
         "Features/CONFIG",
@@ -86,7 +85,6 @@ class SettingsManager(UpdateSettingsManager, SetupSettingsManager, PrEvalSetting
         return [
             RequiredSubmodule("Binaries", True),
             RequiredSubmodule("Common/MU_OEM_SAMPLE", True),
-            RequiredSubmodule("Common/MU_TIANO", True),
             RequiredSubmodule("Common/MU", True),
             RequiredSubmodule("Features/CONFIG", True),
             RequiredSubmodule("Features/DFCI", True),
