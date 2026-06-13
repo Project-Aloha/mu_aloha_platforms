@@ -1,19 +1,19 @@
 [submodule "MU_BASECORE"]
 	path = MU_BASECORE
 	url = https://github.com/microsoft/mu_basecore.git
-	branch = release/202502
+	branch = release/202511
 [submodule "Common/MU_TIANO"]
 	path = Common/MU_TIANO
 	url = https://github.com/microsoft/mu_tiano_plus.git
-	branch = release/202502
+	branch = release/202511
 [submodule "Common/MU"]
 	path = Common/MU
 	url = https://github.com/microsoft/mu_plus.git
-	branch = release/202502
+	branch = release/202511
 [submodule "Common/MU_OEM_SAMPLE"]
 	path = Common/MU_OEM_SAMPLE
 	url = https://github.com/microsoft/mu_oem_sample.git
-	branch = release/202502
+	branch = release/202511
 [submodule "Platforms/SurfaceDuoBinaries"]
 	path = Binaries
 	url = https://github.com/Project-Aloha/SurfaceDuoBinaries-fork
