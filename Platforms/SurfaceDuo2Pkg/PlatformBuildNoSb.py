@@ -50,7 +50,6 @@ class CommonPlatform():
         "Common/MU",
         "Common/MU_TIANO",
         "Common/MU_OEM_SAMPLE",
-        "Silicon/Arm/MU_TIANO",
         "Features/DFCI",
         "Features/CONFIG",
         "Binaries",
@@ -94,7 +93,6 @@ class SettingsManager(UpdateSettingsManager, SetupSettingsManager, PrEvalSetting
             RequiredSubmodule("MU_BASECORE", True),
             RequiredSubmodule("Platforms/OpensslPkg/Library/OpensslLib/openssl", True),
             RequiredSubmodule("Platforms/SurfaceDuoACPI", True),
-            RequiredSubmodule("Silicon/Arm/MU_TIANO", True),
 ## aloha patch start
             RequiredSubmodule("Platforms/CranePkg", True),
 ## aloha patch end
