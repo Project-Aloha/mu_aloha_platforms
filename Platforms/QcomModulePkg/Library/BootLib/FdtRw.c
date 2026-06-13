@@ -285,7 +285,7 @@ STATIC INT32 FdtSubnodeOffsetNamelen (CONST VOID *Fdt,
   @param[in] Fdt      A pointer to the device tree blob.
   @param[in] Path    The full path of the node to locate.
 
-  FdtPathOffset() finds a node of a given path in the device tree.
+  FdtPathOffsetEx() finds a node of a given path in the device tree.
   Each path component may omit the unit address portion, but the
   results of this are undefined if any such path component is
   ambiguous (that is if there are multiple nodes at the relevant
@@ -302,7 +302,7 @@ STATIC INT32 FdtSubnodeOffsetNamelen (CONST VOID *Fdt,
     -FDT_ERR_BADSTRUCTURE,
     -FDT_ERR_TRUNCATED, standard meanings.
  **/
-INT32 FdtPathOffset (CONST VOID *Fdt, CONST CHAR8 *Path)
+INT32 FdtPathOffsetEx (CONST VOID *Fdt, CONST CHAR8 *Path)
 {
   CONST CHAR8 *End = Path + AsciiStrLen (Path);
   CONST CHAR8 *Ptr = Path;
@@ -328,7 +328,7 @@ INT32 FdtPathOffset (CONST VOID *Fdt, CONST CHAR8 *Path)
         return -FDT_ERR_BADPATH;
       }
 
-      Offset = FdtPathOffset (Fdt, Ptr);
+      Offset = FdtPathOffsetEx (Fdt, Ptr);
       Ptr = Qtr;
     }
 
@@ -372,14 +372,14 @@ INT32 FdtGetPropLen (VOID *Fdt, INT32 Offset, CONST CHAR8 *Name)
 }
 
 /**
- * FdtSetProp - create or change a property
+ * FdtSetPropEx - create or change a property
  * @Fdt: pointer to the device tree blob
  * @Offset: offset of the node whose property to change
  * @Name: name of the property to change
  * @Val: pointer to data to set the property value to
  * @Len: length of the property value
  *
- * FdtSetProp () sets the value of the named property in the given
+ * FdtSetPropEx () sets the value of the named property in the given
  * node to the given value and length, creating the property if it
  * does not already exist.
  *
@@ -399,7 +399,7 @@ INT32 FdtGetPropLen (VOID *Fdt, INT32 Offset, CONST CHAR8 *Name)
  *  -FDT_ERR_BADLAYOUT,
  *  -FDT_ERR_TRUNCATED, standard meanings
  */
-INT32 FdtSetProp (VOID *Fdt, INT32 Offset, CONST CHAR8 *Name,
+INT32 FdtSetPropEx (VOID *Fdt, INT32 Offset, CONST CHAR8 *Name,
                     CONST VOID *Val, INT32 Len)
 {
   INT32 OldLen, NewLen;

@@ -1,5 +1,5 @@
 [Defines]
-  INF_VERSION                    = 0x00010005
+  INF_VERSION                    = 0x00010017
   BASE_NAME                      = LibUfdt
   FILE_GUID                      = 6b2478c0-be23-11e0-a28c-0002a5d5c51b
   MODULE_TYPE                    = BASE
@@ -13,7 +13,7 @@
 #
 
 [BuildOptions.AARCH64]
-	*_*_*_CC_FLAGS = -Wno-error -Oz -O2
+	*_*_*_CC_FLAGS = -Wno-error -Oz -O2 -Wno-unused-function
 
 [Sources]
   ufdt_convert.c
@@ -26,3 +26,4 @@
   MdePkg/MdePkg.dec
   EmbeddedPkg/EmbeddedPkg.dec
   QcomModulePkg/QcomModulePkg.dec
+  OpensslPkg/OpensslPkg.dec

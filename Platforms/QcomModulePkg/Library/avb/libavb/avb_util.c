@@ -49,10 +49,10 @@
  * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
+#include "BootLinux.h"
 #include "avb_util.h"
 #include "avb_ops.h"
 #include <stdarg.h>
-#include "BootLinux.h"
 #include <Protocol/EFIScm.h>
 #include <Protocol/scm_sip_interface.h>
 #include "PartitionTableUpdate.h"

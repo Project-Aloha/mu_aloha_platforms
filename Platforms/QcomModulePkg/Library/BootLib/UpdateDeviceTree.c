@@ -167,7 +167,7 @@ UpdateSplashMemInfo (VOID *fdt)
           splashBuf.uVersion, splashBuf.uFrameAddr, splashBuf.uFrameSize));
 
   /* Get offset of the splash memory reservation node */
-  ret = FdtPathOffset (fdt, "/reserved-memory/splash_region");
+  ret = FdtPathOffsetEx (fdt, "/reserved-memory/splash_region");
   if (ret < 0) {
     DEBUG ((EFI_D_ERROR, "ERROR: Could not get splash memory region node\n"));
     return EFI_NOT_FOUND;
@@ -244,7 +244,7 @@ UpdateDemuraRegion (VOID *fdt, CONST CHAR8 *Path,
 
   if (Path != NULL)
   {
-    ret = FdtPathOffset (fdt, Path);
+    ret = FdtPathOffsetEx (fdt, Path);
     if (ret < 0) {
       /* Just return success if demura node not exists */
       return EFI_SUCCESS;
@@ -296,7 +296,7 @@ UpdateDemuraPanelID (VOID *fdt, CONST CHAR8 *Path, UINT64 PanelID)
   if (Path != NULL)
   {
     /* Get offset of the display node */
-    ret = FdtPathOffset (fdt, Path);
+    ret = FdtPathOffsetEx (fdt, Path);
     if (ret < 0) {
       /* Just return success if display node not exists */
       return EFI_SUCCESS;
@@ -436,7 +436,7 @@ UpdateGranuleInfo (VOID *fdt)
     return;
   }
 
-  GranuleNodeOffset = FdtPathOffset (fdt, "/mem-offline");
+  GranuleNodeOffset = FdtPathOffsetEx (fdt, "/mem-offline");
   if (GranuleNodeOffset < 0) {
     DEBUG ((EFI_D_VERBOSE, "INFO: Could not find mem-offline node.\n"));
     return;
@@ -684,7 +684,7 @@ UpdateDeviceTree (VOID *fdt,
   }
 
   /* Get offset of the memory node */
-  ret = FdtPathOffset (fdt, "/memory");
+  ret = FdtPathOffsetEx (fdt, "/memory");
   if (ret < 0) {
     DEBUG ((EFI_D_ERROR, "ERROR: Could not find memory node ...\n"));
     return EFI_NOT_FOUND;
@@ -773,7 +773,7 @@ OutofUpdateRankChannel:
   UpdateDemuraInfo (fdt);
 
   /* Get offset of the chosen node */
-  ret = FdtPathOffset (fdt, "/chosen");
+  ret = FdtPathOffsetEx (fdt, "/chosen");
   if (ret < 0) {
     DEBUG ((EFI_D_ERROR, "ERROR: Could not find chosen node ...\n"));
     return EFI_NOT_FOUND;
@@ -890,7 +890,7 @@ UpdateFstabNode (VOID *fdt)
   UINT32 PaddingEnd = 0;
 
   /* Find the parent node */
-  ParentOffset = FdtPathOffset (fdt, Table.ParentNode);
+  ParentOffset = FdtPathOffsetEx (fdt, Table.ParentNode);
   if (ParentOffset < 0) {
     DEBUG ((EFI_D_VERBOSE, "Failed to Get parent node: fstab\terror: %d\n",
             ParentOffset));
@@ -932,7 +932,7 @@ UpdateFstabNode (VOID *fdt)
       /* For Dynamic partition support disable firmware fstab nodes. */
       if (IsDynamicPartitionSupport ()) {
         DEBUG ((EFI_D_VERBOSE, "Disabling node status :%a\n", NodeName));
-        Status = FdtSetProp (fdt, SubNodeOffset, Table.Property,
+        Status = FdtSetPropEx (fdt, SubNodeOffset, Table.Property,
                           (CONST VOID *)"disabled",
                           (AsciiStrLen ("disabled") + 1));
         if (Status) {
