@@ -40,8 +40,15 @@ extern "C" {
  */
 #include <Base.h>
 
+#undef true
+#undef false
+
+#ifndef true
 #define true ((BOOLEAN) (1 == 1))
+#endif
+#ifndef false
 #define false ((BOOLEAN) (0 == 1))
+#endif
 
 typedef BOOLEAN bool;
 typedef UINT8 uint8_t;

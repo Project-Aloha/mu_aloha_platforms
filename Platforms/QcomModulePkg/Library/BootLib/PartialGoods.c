@@ -411,7 +411,7 @@ FindNodeAndUpdateProperty (VOID *fdt,
     }
 
     /* Find the parent node */
-    ParentOffset = FdtPathOffset (fdt, Table->ParentNode);
+    ParentOffset = FdtPathOffsetEx (fdt, Table->ParentNode);
     if (ParentOffset < 0) {
       DEBUG ((EFI_D_ERROR, "Failed to Get parent node: %a\terror: %d\n",
               Table->ParentNode, ParentOffset));
@@ -429,7 +429,7 @@ FindNodeAndUpdateProperty (VOID *fdt,
     }
 
      /* Add/Replace the property with Replace string value */
-    Ret = FdtSetProp (fdt, SubNodeOffset, SNode->PropertyName,
+    Ret = FdtSetPropEx (fdt, SubNodeOffset, SNode->PropertyName,
                       (CONST VOID *)SNode->ReplaceStr,
                       AsciiStrLen (SNode->ReplaceStr) + 1);
     if (!Ret) {
@@ -442,7 +442,7 @@ FindNodeAndUpdateProperty (VOID *fdt,
 
     if (!AsciiStrCmp (Table->ParentNode, "/cpus")) {
       /* Add/Replace the status property to fail */
-      Ret = FdtSetProp (fdt, SubNodeOffset, "status",
+      Ret = FdtSetPropEx (fdt, SubNodeOffset, "status",
                         (CONST VOID *)"fail",
                         AsciiStrLen ("fail") + 1);
       if (!Ret) {

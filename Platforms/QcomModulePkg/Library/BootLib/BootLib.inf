@@ -96,7 +96,7 @@
 	HobLib
 	PerformanceLib
 	DebugPrintErrorLevelLib
-	FdtLib
+	FdtLib|BootLib
 	TimerLib
 	MemoryAllocationLib
 	StackCanary

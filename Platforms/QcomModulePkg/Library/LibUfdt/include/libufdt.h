@@ -6,8 +6,12 @@
 #include "ufdt_types.h"
 #include <libfdt_env.h>
 
+#ifndef false
 #define false 0
+#endif
+#ifndef true
 #define true 1
+#endif
 
 /*
  * BEGIN of ufdt_node_dict methods
