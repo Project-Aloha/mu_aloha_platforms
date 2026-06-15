@@ -1,0 +1,28 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = UfsInfoLib
+  FILE_GUID                      = C88E9F7A-CB15-4BCD-8E29-5ACB524B8A14
+  MODULE_TYPE                    = DXE_DRIVER
+  VERSION_STRING                 = 1.0
+  LIBRARY_CLASS                  = UfsInfoLib|DXE_DRIVER DXE_RUNTIME_DRIVER UEFI_APPLICATION
+
+#
+#  VALID_ARCHITECTURES           = AARCH64
+#
+
+[Sources]
+ UfsInfoLib.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  AndromedaPkg/AndromedaPkg.dec
+
+[LibraryClasses]
+  IoLib
+  BaseLib
+  UefiLib
+  DebugLib
+  BaseMemoryLib
+  MemoryMapHelperLib
+  CacheMaintenanceLib
+  UefiBootServicesTableLib
