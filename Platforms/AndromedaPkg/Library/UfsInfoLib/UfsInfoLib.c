@@ -212,7 +212,7 @@ GetUfsSpecVer(OUT UINT16 *SpecVer)
       (DEBUG_INFO, "  Boot Enable:        0x%02x\n",
        pUfsDeviceDescriptor->BootEn));
   DEBUG(
-      (DEBUG_WARN, "  Manufacturer ID:    0x%04x\n",
+      (DEBUG_INFO, "  Manufacturer ID:    0x%04x\n",
        SwapBytes16(pUfsDeviceDescriptor->ManufacturerId)));
   DEBUG(
       (DEBUG_INFO, "  Device Version:     0x%04x\n",
