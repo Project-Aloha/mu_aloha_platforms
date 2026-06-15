@@ -573,7 +573,7 @@
 
   MsCorePkg/CheckHardwareConnected/CheckHardwareConnected.inf
   MsCorePkg/MuVarPolicyFoundationDxe/MuVarPolicyFoundationDxe.inf {
-    <PcdsFixedAtBuild.common>
+    <PcdsFixedAtBuild>
       gEfiMdePkgTokenSpaceGuid.PcdDebugClearMemoryValue|0x00
       gEfiMdePkgTokenSpaceGuid.PcdDebugPropertyMask|0x00
       gEfiMdePkgTokenSpaceGuid.PcdDebugPrintErrorLevel|0x00000000
