@@ -372,6 +372,8 @@
   UnitTestPersistenceLib|UnitTestFrameworkPkg/Library/UnitTestPersistenceLibNull/UnitTestPersistenceLibNull.inf
   UnitTestResultReportLib|UnitTestFrameworkPkg/Library/UnitTestResultReportLib/UnitTestResultReportLibDebugLib.inf
 
+  UfsInfoLib|AndromedaPkg/Library/UfsInfoLib/UfsInfoLib.inf
+
   PolicyLib|PolicyServicePkg/Library/DxePolicyLib/DxePolicyLib.inf
 
   PanicLib|MdePkg/Library/BasePanicLibNull/BasePanicLibNull.inf  # MU_CHANGE
