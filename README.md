@@ -75,7 +75,7 @@ sudo docker run -v $(pwd):/build/ -it mu:v1
 
 - Example with secure boot on:
   ```
-  ./build_uefi.py -d <target-name> -s 1
+  ./build_uefi.py -d xiaomi-raphael -s 0
   ```
 
 - Example with secure boot off and DEBUG build:
@@ -280,8 +280,7 @@ sudo docker run -v $(pwd):/build/ -it mu:v1
 | Device                               | Target name            | DSDT Support    | Maintainers                                        |
 |--------------------------------------|------------------------|-----------------|----------------------------------------------------|
 | Qualcomm Technologies, Inc. QRD 8550 | qcom-qrd8550           | ❌              | None                                               |
-
-#### AYANEO Devices
+| Qualcomm Technologies, Inc. MTP 8550 | qcom-mtp8550           | ❌              | None                                               |
 
 | Device                               | Target name            | DSDT Support    | Contributors                                       |
 |--------------------------------------|------------------------|-----------------|----------------------------------------------------|
@@ -308,8 +307,6 @@ sudo docker run -v $(pwd):/build/ -it mu:v1
 
 | Device                               | Target name            | DSDT Support    | Contributors                                       |
 |--------------------------------------|------------------------|-----------------|----------------------------------------------------|
-| Xiaomi 13                            | xiaomi-fuxi            | ❌              | None                                               |
-| Xiaomi 13 Pro                        | xiaomi-nuwa            | ❌              | None                                               |
 | Xiaomi Pad6 S Pro                    | xiaomi-sheng           | ❌              | None                                               |
 | Xiaomi K60 Pro                       | xiaomi-socrates        | ❌              | None                                               |
 
