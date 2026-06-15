@@ -10,5 +10,3 @@ gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"MP"
 
 gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"alpha"
 
-# Storage
-gAndromedaPkgTokenSpaceGuid.PcdStorageHasUFS3|0

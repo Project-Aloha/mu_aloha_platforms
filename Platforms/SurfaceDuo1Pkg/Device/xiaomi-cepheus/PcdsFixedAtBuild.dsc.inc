@@ -15,5 +15,3 @@ gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"MP"
 
 gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"cepheus"
 
-# Storage
-gAndromedaPkgTokenSpaceGuid.PcdStorageHasUFS3|0
