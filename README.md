@@ -75,7 +75,7 @@ sudo docker run -v $(pwd):/build/ -it mu:v1
 
 - Example with secure boot on:
   ```
-  ./build_uefi.py -d xiaomi-raphael -s 0
+  ./build_uefi.py -d <target-name> -s 1
   ```
 
 - Example with secure boot off and DEBUG build:
@@ -282,6 +282,7 @@ sudo docker run -v $(pwd):/build/ -it mu:v1
 | Qualcomm Technologies, Inc. QRD 8550 | qcom-qrd8550           | ❌              | None                                               |
 | Qualcomm Technologies, Inc. MTP 8550 | qcom-mtp8550           | ❌              | None                                               |
 
+#### AYANEO Devices
 | Device                               | Target name            | DSDT Support    | Contributors                                       |
 |--------------------------------------|------------------------|-----------------|----------------------------------------------------|
 | AYANEO Pocket S                      | ayaneo-aps             | ❌              | None                                               |
