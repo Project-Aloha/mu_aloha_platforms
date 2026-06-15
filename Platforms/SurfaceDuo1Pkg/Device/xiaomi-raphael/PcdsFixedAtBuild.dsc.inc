@@ -9,6 +9,3 @@ gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemRetailModel|"raphael"
 gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"MP"
 
 gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"Xiaomi K20 Pro"
-
-# Storage
-gAndromedaPkgTokenSpaceGuid.PcdStorageHasUFS3|0

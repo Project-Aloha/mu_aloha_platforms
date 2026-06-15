@@ -8,4 +8,3 @@ gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"6"
 
 gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"msmnile"
 
-gAndromedaPkgTokenSpaceGuid.PcdStorageHasUFS3|0
