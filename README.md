@@ -75,7 +75,7 @@ sudo docker run -v $(pwd):/build/ -it mu:v1
 
 - Example with secure boot on:
   ```
-  ./build_uefi.py -d <target-name> -s 1
+  ./build_uefi.py -d xiaomi-raphael -s 0
   ```
 
 - Example with secure boot off and DEBUG build:
