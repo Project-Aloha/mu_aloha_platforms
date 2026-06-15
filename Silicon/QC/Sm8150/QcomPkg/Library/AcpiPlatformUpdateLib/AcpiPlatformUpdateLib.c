@@ -24,8 +24,9 @@
 #include <Protocol/EFIPlatformInfo.h>
 #include <Protocol/EFISmem.h>
 
-VOID
-PlatformUpdateAcpiTables(VOID)
+#include <Library/UfsInfoLib.h>
+
+VOID PlatformUpdateAcpiTables(VOID)
 {
   EFI_STATUS Status;
 
@@ -39,7 +40,7 @@ PlatformUpdateAcpiTables(VOID)
   UINT16                              SDFE  = 0;
   UINT16                              SIDM  = 0;
   UINT32                              SUFS  = 0xFFFFFFFF;
-  UINT32                              PUS3  = FixedPcdGet32(PcdStorageHasUFS3);
+  UINT32                              PUS3  = 0;
   UINT32                              SUS3  = 0xFFFFFFFF;
   UINT32                             *pSIDT = (UINT32 *)0x784130;
   UINT32                              SIDT  = (*pSIDT & 0xFF00000) >> 20;
@@ -97,14 +98,19 @@ PlatformUpdateAcpiTables(VOID)
   mBoardProtocol->GetChipId(mBoardProtocol, (EFIChipInfoIdType *)&SOID);
   mBoardProtocol->GetChipVersion(mBoardProtocol, &SIDV);
   mBoardProtocol->GetChipFamily(mBoardProtocol, (EFIChipInfoFamilyType *)&SDFE);
-  mBoardProtocol->GetModemSupport(mBoardProtocol, (EFIChipInfoModemType *)&SIDM);
-  mBoardProtocol->GetSerialNumber(mBoardProtocol, (EFIChipInfoSerialNumType *)&SOSN1);
-  mBoardProtocol->GetQFPROMChipId(mBoardProtocol, (EFIChipInfoQFPROMChipIdType *)&SOSN2);
-  mBoardProtocol->GetChipIdString(mBoardProtocol, SIDS, EFICHIPINFO_MAX_ID_LENGTH);
+  mBoardProtocol->GetModemSupport(
+      mBoardProtocol, (EFIChipInfoModemType *)&SIDM);
+  mBoardProtocol->GetSerialNumber(
+      mBoardProtocol, (EFIChipInfoSerialNumType *)&SOSN1);
+  mBoardProtocol->GetQFPROMChipId(
+      mBoardProtocol, (EFIChipInfoQFPROMChipIdType *)&SOSN2);
+  mBoardProtocol->GetChipIdString(
+      mBoardProtocol, SIDS, EFICHIPINFO_MAX_ID_LENGTH);
 
   pEfiSmemProtocol->GetFunc(137, &SmemSize, (VOID **)&SOSI);
 
-  pEfiPlatformInfoProtocol->GetPlatformInfo(pEfiPlatformInfoProtocol, &PlatformInfo);
+  pEfiPlatformInfoProtocol->GetPlatformInfo(
+      pEfiPlatformInfoProtocol, &PlatformInfo);
 
   UINT16 SVMJ = (UINT16)((SIDV >> 16) & 0xFFFF);
   UINT16 SVMI = (UINT16)(SIDV & 0xFFFF);
@@ -133,9 +139,24 @@ PlatformUpdateAcpiTables(VOID)
   if (!EFI_ERROR(LocateMemoryMapAreaByName("TGCM", &TGCMRegion))) {
     TCMA = (UINT32)TGCMRegion.Address;
     TCML = (UINT32)TGCMRegion.Length;
-  } else {
+  }
+  else {
     TCMA = 0xDEADBEEF;
     TCML = 0xBEEFDEAD;
+  }
+
+  //
+  // Get UFS storage chip's spec version
+  //
+  {
+    UINT16 UfsSpecVerMajor = 0;
+
+    Status = GetUfsSpecVer(&UfsSpecVerMajor);
+    // If major is 3, set PUS3 to 1
+    if (UfsSpecVerMajor == 3)
+      PUS3 = 1;
+    if (EFI_ERROR(Status))
+      PUS3 = 0;
   }
 
   DEBUG((EFI_D_WARN, "Chip Id: %d\n", SOID));
@@ -147,6 +168,7 @@ PlatformUpdateAcpiTables(VOID)
   DEBUG((EFI_D_WARN, "Chip Name: %a\n", SIDS));
   DEBUG((EFI_D_WARN, "Chip Info Address: 0x%x\n", SOSI));
   DEBUG((EFI_D_WARN, "Platform Subtype: %d\n", PLST));
+  DEBUG((EFI_D_WARN, "Device has UFS3: %a\n", PUS3 ? "Yes" : "No"));
 
   UpdateNameAslCode(SIGNATURE_32('S', 'O', 'I', 'D'), &SOID, 4);
   UpdateNameAslCode(SIGNATURE_32('S', 'T', 'O', 'R'), &STOR, 4);
@@ -174,5 +196,6 @@ PlatformUpdateAcpiTables(VOID)
   UpdateNameAslCode(SIGNATURE_32('S', 'O', 'S', 'I'), &SOSI, 8);
   UpdateNameAslCode(SIGNATURE_32('P', 'R', 'P', '0'), &PRP0, 4);
   UpdateNameAslCode(SIGNATURE_32('P', 'R', 'P', '1'), &PRP1, 4);
-  UpdateNameAslCode(SIGNATURE_32('S', 'I', 'D', 'S'), &SIDS, EFICHIPINFO_MAX_ID_LENGTH);
+  UpdateNameAslCode(
+      SIGNATURE_32('S', 'I', 'D', 'S'), &SIDS, EFICHIPINFO_MAX_ID_LENGTH);
 }
