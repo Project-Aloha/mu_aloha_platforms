@@ -5,7 +5,7 @@
     SPDX-License-Identifier: MIT
 */
 
-#include "QcSecProtocolsLocatorSecLib.h"
+#include "SecProtocolFinderLib.h"
 #include <Library/BaseLib.h>
 #include <Library/CacheMaintenanceLib.h>
 #include <Library/ConfigurationMapHelperLib.h>

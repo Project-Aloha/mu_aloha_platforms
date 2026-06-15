@@ -1,13 +1,13 @@
 [Defines]
   INF_VERSION                    = 0x00010005
-  BASE_NAME                      = QcSecProtocolsLocatorSecLib
+  BASE_NAME                      = SecProtocolFinderLib
   FILE_GUID                      = 438A121C-8A29-2DD9-CCA0-42BBD478A436
   MODULE_TYPE                    = BASE
   VERSION_STRING                 = 1.0
-  LIBRARY_CLASS                  = QcSecProtocolsLocatorSecLib
+  LIBRARY_CLASS                  = SecProtocolFinderLib
 
 [Sources]
-  QcSecProtocolsLocatorSecLib.c
+  SecProtocolFinderLib.c
 
 [Packages]
   ArmPkg/ArmPkg.dec
