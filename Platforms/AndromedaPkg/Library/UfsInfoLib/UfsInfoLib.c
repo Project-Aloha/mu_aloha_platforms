@@ -43,14 +43,16 @@ GetUfsSpecVer(OUT UINT16 *SpecVer)
   // Locate ufs mmio region
   Status = LocateMemoryMapAreaByName("UFS UFS REGS", &UfsRegion);
   if (EFI_ERROR(Status)) {
-    DEBUG((DEBUG_ERROR, "%a: Failed to locate UFS MMIO region !!\n", __func__));
-    return Status;
+    DEBUG((DEBUG_WARN, "%a: Failed to locate UFS MMIO region.\n", __func__));
+    DEBUG((DEBUG_WARN, "%a: Use default address: 0x%lx\n", __func__, 0x1D84000));
+    UfsMem = 0x1D84000;
+  } else {
+    // Ufshci offset(0x4000) + Ufshci region size(0x3000)
+    if (UfsRegion.Address == 0x1D80000 && UfsRegion.Length >= 0x4000 + 0x3000)
+      UfsMem = UfsRegion.Address + 0x4000;
+    else // Customized address? Ignore size checks.
+      UfsMem = UfsRegion.Address;
   }
-  // Ufshci offset(0x4000) + Ufshci region size(0x3000)
-  if (UfsRegion.Address == 0x1D80000 && UfsRegion.Length >= 0x4000 + 0x3000)
-    UfsMem = UfsRegion.Address + 0x4000;
-  else // Customized address? Ignore size checks.
-    UfsMem = UfsRegion.Address;
 
   DEBUG(
       (DEBUG_WARN, "%a: UFS MMIO region located at 0x%lx\n", __func__, UfsMem));
@@ -210,7 +212,7 @@ GetUfsSpecVer(OUT UINT16 *SpecVer)
       (DEBUG_INFO, "  Boot Enable:        0x%02x\n",
        pUfsDeviceDescriptor->BootEn));
   DEBUG(
-      (DEBUG_INFO, "  Manufacturer ID:    0x%04x\n",
+      (DEBUG_WARN, "  Manufacturer ID:    0x%04x\n",
        SwapBytes16(pUfsDeviceDescriptor->ManufacturerId)));
   DEBUG(
       (DEBUG_INFO, "  Device Version:     0x%04x\n",
