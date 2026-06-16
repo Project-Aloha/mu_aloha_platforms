@@ -13,6 +13,3 @@ gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"gts7fewifi"
 # Display Caller
 #gAndromedaPkgTokenSpaceGuid.PcdDisplayCallerExitDisableDisplay|FALSE
 #gAndromedaPkgTokenSpaceGuid.PcdDisplayCallerStallBeforeEnable|0
-
-# Storage
-gAndromedaPkgTokenSpaceGuid.PcdStorageHasUFS3|0
