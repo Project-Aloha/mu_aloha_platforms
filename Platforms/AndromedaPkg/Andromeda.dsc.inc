@@ -623,7 +623,10 @@
   AndromedaPkg/Driver/SmBiosTableDxe/SmBiosTableDxe.inf
 
   # PrePI
-  AndromedaPkg/PrePi/PeiUniCore.inf
+  AndromedaPkg/PrePi/PeiUniCore.inf {
+		<LibraryClasses>
+      NULL|MdeModulePkg/Library/LzmaCustomDecompressLib/LzmaCustomDecompressLib.inf
+  }
 
   AndromedaPkg/UFP/ufpdevicefw.inf
 
