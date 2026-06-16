@@ -13,6 +13,7 @@
 
 #include <Library/MemoryMapHelperLib.h>
 #include <Library/RFSProtectionLib.h>
+#include <Library/UfsInfoLib.h>
 
 #include <Protocol/EFIChipInfo.h>
 #include <Protocol/EFIPlatformInfo.h>
@@ -33,7 +34,7 @@ PlatformUpdateAcpiTables(VOID)
   UINT16                              SDFE  = 0;
   UINT16                              SIDM  = 0;
   UINT32                              SUFS  = 0xFFFFFFFF;
-  UINT32                              PUS3  = FixedPcdGet32(PcdStorageHasUFS3);
+  UINT32                              PUS3  = 0;
   UINT32                              SUS3  = 0xFFFFFFFF;
   UINT32                             *pSIDT = (UINT32 *)0x784180;
   UINT32                              SIDT  = (*pSIDT & 0xFF00000) >> 20;
@@ -139,6 +140,20 @@ PlatformUpdateAcpiTables(VOID)
     TCML = 0xBEEFDEAD;
   }
 
+  //
+  // Get UFS storage chip's spec version
+  //
+  {
+    UINT16 UfsSpecVerMajor = 0;
+
+    Status = GetUfsSpecVer(&UfsSpecVerMajor);
+    // If major is 3, set PUS3 to 1
+    if (UfsSpecVerMajor == 3)
+      PUS3 = 1;
+    if (EFI_ERROR(Status))
+      PUS3 = 0;
+  }
+
   SOID = 0x237;
 
   DEBUG((EFI_D_WARN, "Chip Id: %d\n", SOID));
@@ -150,6 +165,7 @@ PlatformUpdateAcpiTables(VOID)
   DEBUG((EFI_D_WARN, "Chip Name: %a\n", SIDS));
   DEBUG((EFI_D_WARN, "Chip Info Address: 0x%x\n", SOSI));
   DEBUG((EFI_D_WARN, "Platform Subtype: %d\n", PLST));
+  DEBUG((EFI_D_WARN, "Device has UFS3: %a\n", PUS3 ? "Yes" : "No"));
 
   UpdateNameAslCode(SIGNATURE_32('S', 'O', 'I', 'D'), &SOID, 4);
   UpdateNameAslCode(SIGNATURE_32('S', 'K', 'U', 'V'), &SKUV, 4);
