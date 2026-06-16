@@ -30,3 +30,6 @@
 	path = Platforms/OpensslPkg/Library/OpensslLib/openssl
 	url = https://github.com/openssl/openssl
 	branch = aea7aaf2abb04789f5868cbabec406ea43aa84bf
+[submodule "Platforms/MbedTlsPkg/Library/MbedTlsLib/mbedtls"]
+	path = Platforms/MbedTlsPkg/Library/MbedTlsLib/mbedtls
+	url = https://github.com/ARMmbed/mbedtls
