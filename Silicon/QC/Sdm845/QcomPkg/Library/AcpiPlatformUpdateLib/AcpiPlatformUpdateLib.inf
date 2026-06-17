@@ -41,4 +41,3 @@
 
 [FixedPcd]
   gArmPlatformTokenSpaceGuid.PcdClusterCount
-  gAndromedaPkgTokenSpaceGuid.PcdStorageHasUFS3
