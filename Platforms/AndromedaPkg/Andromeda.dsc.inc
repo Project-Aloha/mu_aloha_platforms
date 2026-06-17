@@ -552,15 +552,11 @@
   # Fake Variable Services
   MdeModulePkg/Universal/Variable/RuntimeDxe/VariableRuntimeDxe.inf {
     <LibraryClasses>
-      BaseCryptLib|OpensslPkg/Library/BaseCryptLib/RuntimeCryptLib.inf
-      TlsLib|OpensslPkg/Library/TlsLib/TlsLib.inf
+      BaseCryptLib|MbedTlsPkg/Library/BaseCryptLib/RuntimeCryptLib.inf
       IntrinsicLib|CryptoPkg/Library/IntrinsicLib/IntrinsicLib.inf
-## Patch: Fix memset redefine issue while linking, only implement while screen serial is enabled.
-!if $(USE_SCREEN_FOR_SERIAL_OUTPUT) == 1
-      CompilerIntrinsicsLib|CryptoPkg/Library/IntrinsicLib/IntrinsicLib.inf
-!endif
-## End patch
-      OpensslLib|OpensslPkg/Library/OpensslLib/OpensslLib.inf # Contains openSSL library used by BaseCryptoLib
+      MbedTlsLib|MbedTlsPkg/Library/MbedTlsLib/MbedTlsLib.inf
+      OpensslLib|OpensslPkg/Library/OpensslLib/OpensslLib.inf # Contains openSSL library used by MbedTlsLib
+      TlsLib|OpensslPkg/Library/TlsLib/TlsLib.inf
   }
 
   MdeModulePkg/Universal/WatchdogTimerDxe/WatchdogTimer.inf
