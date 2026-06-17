@@ -1,0 +1,29 @@
+## @file
+#  Package for MbedTLS-based cryptographic library implementation.
+#
+#  This package provides the MbedTLS-based implementation of BaseCryptLib
+#  and supporting libraries for UEFI cryptographic operations.
+#
+#  Copyright (c) 2023, Intel Corporation. All rights reserved.<BR>
+#  SPDX-License-Identifier: BSD-2-Clause-Patent
+#
+##
+
+[Defines]
+  DEC_SPECIFICATION              = 0x00010005
+  PACKAGE_NAME                   = MbedTlsPkg
+  PACKAGE_GUID                   = 12c0a94f-7f49-4ad6-bd5c-3a2a592f6c14
+  PACKAGE_VERSION                = 1.0
+
+[Includes.Common.Private]
+  Private
+  Library/Include
+  Library/MbedTlsLib/Include
+  Library/MbedTlsLib/mbedtls/include
+  Library/MbedTlsLib/mbedtls/include/mbedtls
+  Library/MbedTlsLib/mbedtls/library
+
+[LibraryClasses.Common.Private]
+  ##  @libraryclass  Provides library functions from the mbedtls project.
+  #
+  MbedTlsLib|Private/Library/MbedTlsLib.h
