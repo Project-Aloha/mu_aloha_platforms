@@ -8,7 +8,7 @@ gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemModel|"K20 Pro"
 gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemRetailModel|"raphael"
 gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"MP"
 
-gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"Xiaomi K20 Pro"
+gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"raphael"
 
 [PcdsDynamicDefault.common]
 gEfiMdeModulePkgTokenSpaceGuid.PcdVideoHorizontalResolution|1080
