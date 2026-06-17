@@ -90,6 +90,7 @@ class SettingsManager(UpdateSettingsManager, SetupSettingsManager, PrEvalSetting
             RequiredSubmodule("Features/DFCI", True),
             RequiredSubmodule("MU_BASECORE", True),
             RequiredSubmodule("Platforms/OpensslPkg/Library/OpensslLib/openssl", True),
+            RequiredSubmodule("Platforms/MbedTlsPkg/Library/MbedTlsLib/mbedtls", True),
             RequiredSubmodule("Platforms/SurfaceDuoACPI", True),
 ## aloha patch start
             RequiredSubmodule("Platforms/CranePkg", True),
