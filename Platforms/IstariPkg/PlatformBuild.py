@@ -15,9 +15,6 @@ from pathlib import Path
 SiliconName = "Msm8996"
 PlatformName = "Istari"
 PackageName = PlatformName+"Pkg"
-import sys
-sys.path.append(os.path.join(os.path.dirname(__file__), 'PythonLibs'))
-import PostBuild
 ## aloha patch end
 
 from edk2toolext.environment import shell_environment
@@ -277,8 +274,21 @@ class PlatformBuilder(UefiBuilder, BuildSettingsManager):
 
     def PlatformPostBuild(self):
 ## aloha patch start
+        import sys
+        import importlib
         logging.info("Building Android Boot Image.")
-        PostBuild.makeAndroidImage(self.GetOutputBinDirectory(), self.GetOutputDirectory(), self.GetWorkspaceRoot(), self.env.GetValue("TARGET_DEVICE"), self.GetDTBName())
+        sys.path.append(os.path.join(self.GetWorkspaceRoot(), 'PythonLibs'))
+        BootImage = getattr(importlib.import_module("PostBuild"), "Bootimg")
+        bootimg =  BootImage(
+            self.GetOutputBinDirectory(),
+            self.GetOutputDirectory(),
+            self.GetWorkspaceRoot(),
+            self.env.GetValue("TARGET_DEVICE"),
+            self.GetDTBName(),
+            self.GetName(),
+            SiliconName
+        )
+        bootimg.makeAndroidImage()
 ## aloha patch end
         return 0
 
