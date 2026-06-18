@@ -15,7 +15,3 @@ git config --global --add safe.directory '*'
 
 # Initialize mu uefi build env
 ./build_uefi.py --init
-
-# Link output directory to tmpfs.
-mkdir /tmp/Build
-ls -s /tmp/Build ./Build/
