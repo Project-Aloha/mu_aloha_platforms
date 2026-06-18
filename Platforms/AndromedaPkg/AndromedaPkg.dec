@@ -114,9 +114,6 @@
   gAndromedaPkgTokenSpaceGuid.PcdDisplayCallerExitDisableDisplay|FALSE|BOOLEAN|0x0000a701
   gAndromedaPkgTokenSpaceGuid.PcdDisplayCallerStallBeforeEnable|0|UINT64|0x0000a702
 
-  # Storage
-  gAndromedaPkgTokenSpaceGuid.PcdStorageHasUFS3|1|UINT32|0x0000a801
-
   ## This PCD points to the file name GUID of the UFPMenuApp
   #  Platform can customize the PCD to point to different application for UFP Menu
   # @Prompt UFP Menu File
