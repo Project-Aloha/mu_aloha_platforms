@@ -4,5 +4,15 @@
     "bootshim": {
         "UEFI_BASE": "0x9FC41000",
         "UEFI_SIZE": "0x002BF000"
+    },
+    "default_aboot_args": {
+        "header_version": 3,
+        "kernel_compressed": false,
+        "emptyramdisk": false,
+        "cmdline": "",
+        "pagesize": 4096,
+        "base": "0x0",
+        "os_version": "11.0.0",
+        "os_patch_level": "2024-02-01"
     }
 }
