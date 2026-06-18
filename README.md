@@ -243,13 +243,7 @@ sudo docker run -v $(pwd):/build/ -it mu:v1
 
 | Device                               | Target name            | DSDT Support    | Contributors                                       |
 |--------------------------------------|------------------------|-----------------|----------------------------------------------------|
-| Galaxy Z Fold 3 5G                   | samsung-q2q            | ✅              | None                                               |
-
-#### ZTE Devices
-
-| Device                               | Target name            | DSDT Support    | Contributors                                       |
-|--------------------------------------|------------------------|-----------------|----------------------------------------------------|
-| ZTE A31 Pro                          | zte-p875a02            | ✅              | None                                               |
+| Galaxy Z Fold 3 5G                   | samsung-q2q            | ✅              | None                                               |                                        |
 
 #### Xiaomi Devices
 
