@@ -12,7 +12,7 @@ gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemModel|"K70"
 gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemRetailModel|"vermeer"
 gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"Redmi_K70_vermeer"
 
-gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"Redmi K70"
+gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"vermeer"
 
 [PcdsDynamicDefault.common]
 gEfiMdeModulePkgTokenSpaceGuid.PcdVideoHorizontalResolution|1440
