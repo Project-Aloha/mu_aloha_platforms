@@ -47,6 +47,6 @@ $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/FvUtilsDxe/FvUt
 $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/PatchedBinaries/ButtonsDxe.inf
 $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/PatchedBinaries/UFSDxe.inf
 QcomPkg/PatchedBinaries/SPMIDxe.inf
-$(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/PatchedBinaries/UsbConfigDxe.inf
+QcomPkg/PatchedBinaries/UsbConfigDxe.inf
 QcomPkg/PatchedBinaries/ClockDxe.inf
 QcomPkg/PatchedBinaries/PmicDxeLa.inf
