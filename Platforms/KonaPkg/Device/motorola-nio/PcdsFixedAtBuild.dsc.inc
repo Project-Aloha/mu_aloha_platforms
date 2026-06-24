@@ -10,6 +10,8 @@ gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"XT2125-4"
 
 gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"Motorola Moto g(100)"
 
+gAndromedaPkgTokenSpaceGuid.PcdMLVMBase|0xA0000000
+
 [PcdsDynamicDefault.common]
 gEfiMdeModulePkgTokenSpaceGuid.PcdVideoHorizontalResolution|1080
 gEfiMdeModulePkgTokenSpaceGuid.PcdVideoVerticalResolution|2520
