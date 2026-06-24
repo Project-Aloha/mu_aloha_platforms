@@ -62,24 +62,12 @@
   SMM_CRYPTO_ARCH                = NONE
   STANDALONEMM_CRYPTO_ARCH       = NONE
 
-  # Device-specific memory map hacks
-  HAS_MLVM                       = FALSE
-
   PLATFORM_HAS_ACTLR_EL1_UNIMPLEMENTED_ERRATA         = 0
   PLATFORM_HAS_AMCNTENSET0_EL0_UNIMPLEMENTED_ERRATA   = 0
   PLATFORM_HAS_GIC_V3_WITHOUT_IRM_FLAG_SUPPORT_ERRATA = 0
   PLATFORM_HAS_PSCI_MEMPROTECT_FAILING_ERRATA         = 1
 
 !include SurfaceDuo1Pkg/Device/$(TARGET_DEVICE)/Defines.dsc.inc
-
-[BuildOptions.common]
-# TODO: Re-do the memory map stuff at one point so it's not defined in static variable and put 
-# those defines only in modules that need them, so changing anything here doesn't rebuild EVERY DAMN THING.
-!if $(HAS_MLVM) == TRUE
-  GCC:*_*_AARCH64_CC_FLAGS = -DHAS_MLVM=1
-!else
-  GCC:*_*_AARCH64_CC_FLAGS = -DHAS_MLVM=0
-!endif
 
 [PcdsFixedAtBuild.common]
   # Platform-specific
