@@ -66,9 +66,6 @@
 // #define GAP_END_ADDR 0xC0000000
 #define SIZE_2GB 0x80000000
 
-#ifdef HAS_MLVM
-#define MLVM_BASE 0xA0000000
-#endif
 /*-------------------------Global_Variable------------------------------*/
 RamPartitionEntry *RamPartitionEntries = NULL;
 
@@ -239,18 +236,16 @@ RamPartitionDxeInitialize(
         (EFI_D_INFO, "AvailableLength: 0x%016lx \n",
          RamPartitionEntries[i].AvailableLength));
 
-#ifdef HAS_MLVM
-    // Update the first MLVM region for 855 Platform.
-    if (RamPartitionEntries[i].Base == GENERIC_RAM_BASE) {
+    // Update the first MLVM region for 855 Platform if MLVM is not 0.
+    if ((FixedPcdGet64(PcdMLVMBase) != 0) && (RamPartitionEntries[i].Base == GENERIC_RAM_BASE)) {
       MemoryDescriptorEx[0].Length =
-          RamPartitionEntries[i].AvailableLength + GENERIC_RAM_BASE - MLVM_BASE;
+          RamPartitionEntries[i].AvailableLength + GENERIC_RAM_BASE - FixedPcdGet64(PcdMLVMBase);
       SpiltAndAddRamPartitions(
           MemoryDescriptorEx[0].Address, MemoryDescriptorEx[0].Length,
           MemoryDescriptorEx[0].ArmAttributes,
           MemoryDescriptorEx[0].MemoryType);
       continue;
     }
-#endif
 
     // Perhaps some platforms allocated an area for RAM before 0x80000000.
     // Here we only consider the size of the area as 0x40000000.
