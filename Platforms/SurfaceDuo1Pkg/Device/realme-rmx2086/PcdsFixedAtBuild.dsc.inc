@@ -9,3 +9,5 @@ gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemRetailModel|"rmx2086"
 gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"MP"
 
 gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"Realme X3"
+
+gAndromedaPkgTokenSpaceGuid.PcdMLVMBase|0xA0000000

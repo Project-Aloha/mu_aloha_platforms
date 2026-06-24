@@ -10,3 +10,5 @@ gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"MP"
 
 gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"Samsung S10"
 
+gAndromedaPkgTokenSpaceGuid.PcdMLVMBase|0xA0000000
+

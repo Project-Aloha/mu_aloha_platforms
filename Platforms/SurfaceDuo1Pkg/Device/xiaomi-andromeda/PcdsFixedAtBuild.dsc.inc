@@ -9,3 +9,5 @@ gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemRetailModel|"andromeda"
 gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"E5G"
 gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"Xiaomi MIX3 5G"
 
+gAndromedaPkgTokenSpaceGuid.PcdMLVMBase|0xA0000000
+

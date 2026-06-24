@@ -10,6 +10,8 @@ gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"MP"
 
 gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"Samsung Galaxy Fold"
 
+gAndromedaPkgTokenSpaceGuid.PcdMLVMBase|0xA0000000
+
 [PcdsDynamicDefault.common]
 gEfiMdeModulePkgTokenSpaceGuid.PcdVideoHorizontalResolution|2152
 gEfiMdeModulePkgTokenSpaceGuid.PcdVideoVerticalResolution|1536

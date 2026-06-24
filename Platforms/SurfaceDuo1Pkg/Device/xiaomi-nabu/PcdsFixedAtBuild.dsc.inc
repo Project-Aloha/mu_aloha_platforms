@@ -12,3 +12,5 @@ gAndromedaPkgTokenSpaceGuid.PcdSmbiosProcessorRetailModel|"SM8150-AC"
 gAndromedaPkgTokenSpaceGuid.PcdSmbiosBoardModel|"K82"
 
 gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"nabu"
+
+gAndromedaPkgTokenSpaceGuid.PcdMLVMBase|0xA0000000

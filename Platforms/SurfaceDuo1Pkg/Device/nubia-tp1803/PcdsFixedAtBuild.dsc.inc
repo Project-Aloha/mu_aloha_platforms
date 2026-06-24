@@ -10,3 +10,5 @@ gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"MP"
 
 gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"Nubia mini 5G"
 
+gAndromedaPkgTokenSpaceGuid.PcdMLVMBase|0xA0000000
+

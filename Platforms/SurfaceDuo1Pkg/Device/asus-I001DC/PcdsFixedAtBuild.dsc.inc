@@ -11,3 +11,5 @@ gAndromedaPkgTokenSpaceGuid.PcdSmbiosProcessorModel|"Snapdragon (TM) 855+ @ 2.96
 gAndromedaPkgTokenSpaceGuid.PcdSmbiosProcessorRetailModel|"SM8150-AC"
 
 gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"ASUS ROG 2"
+
+gAndromedaPkgTokenSpaceGuid.PcdMLVMBase|0xA0000000
