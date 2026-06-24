@@ -7,3 +7,5 @@ gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemBrand|"Qualcomm"
 gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"6"
 
 gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"msmnile"
+
+gAndromedaPkgTokenSpaceGuid.PcdMLVMBase|0xA0000000

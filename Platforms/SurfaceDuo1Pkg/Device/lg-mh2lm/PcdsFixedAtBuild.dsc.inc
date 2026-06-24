@@ -10,3 +10,5 @@ gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"MP"
 
 gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"LGE G8x"
 
+gAndromedaPkgTokenSpaceGuid.PcdMLVMBase|0xA0000000
+

@@ -10,3 +10,5 @@ gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"MP"
 
 gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"beta"
 
+gAndromedaPkgTokenSpaceGuid.PcdMLVMBase|0xA0000000
+

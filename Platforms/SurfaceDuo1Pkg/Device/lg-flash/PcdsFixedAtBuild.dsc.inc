@@ -10,3 +10,5 @@ gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"LM-V500"
 
 gAndromedaPkgTokenSpaceGuid.PcdABLProduct|"flash"
 
+gAndromedaPkgTokenSpaceGuid.PcdMLVMBase|0xA0000000
+
