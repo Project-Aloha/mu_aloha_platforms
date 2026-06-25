@@ -21,7 +21,6 @@ APRIORI DXE {
     INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/HWIODxe/HWIODxe.inf
     INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/ChipInfoDxe/ChipInfoDxe.inf
     INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/PlatformInfoDxe/PlatformInfoDxe.inf
-#    INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/HALIOMMUDxe/HALIOMMUDxe.inf
     INF QcomPkg/PatchedBinaries/HALIOMMUDxe.inf
     INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/ULogDxe/ULogDxe.inf
     INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/CmdDbDxe/CmdDbDxe.inf
@@ -69,74 +68,66 @@ APRIORI DXE {
     INF MdeModulePkg/Universal/HiiDatabaseDxe/HiiDatabaseDxe.inf
     INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/FontDxe/FontDxe.inf
     INF MdeModulePkg/Universal/BdsDxe/BdsDxe.inf
-    #INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/SecRSADxe/SecRSADxe.inf
+
     FILE DRIVER = 32C71E68-83A8-46ED-AED1-094E71B12057 {
         SECTION PE32 = $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/SecRSADxe/SecRSADxe.efi
         SECTION UI = "SecRSADxe"
     }
-    #INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/ASN1X509Dxe/ASN1X509Dxe.inf
+
     FILE DRIVER = C2F9A4F5-F7B4-43E7-BA99-5EA804CC103A {
         SECTION PE32 = $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/ASN1X509Dxe/ASN1X509Dxe.efi
         SECTION UI = "ASN1X509Dxe"
     }
 
     INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/AdcDxe/AdcDxe.inf
-#    INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/UsbPwrCtrlDxe/UsbPwrCtrlDxe.inf
     INF Napali/BOOT.XF.2.2-00101-SDM845WZB-1/QcomPkg/Drivers/UsbPwrCtrlDxe/UsbPwrCtrlDxe.inf
     INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/QcomChargerDxe/QcomChargerDxeLA.inf
     INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/ChargerExDxe/ChargerExDxe.inf
     INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/UsbfnDwc3Dxe/UsbfnDwc3Dxe.inf
     INF Napali/BOOT.XF.2.2-00101-SDM845WZB-1/QcomPkg/Drivers/XhciPciEmulationDxe/XhciPciEmulationDxe.inf
-    # INF Napali/BOOT.XF.2.2-00101-SDM845WZB-1/QcomPkg/Drivers/XhciDxe/XhciDxe.inf
+
     FILE DRIVER = B7F50E91-A759-412C-ADE4-DCD03E7F7C28 {
-            SECTION PE32 = Napali/BOOT.XF.2.2-00101-SDM845WZB-1/QcomPkg/Drivers/XhciDxe/XhciDxe.efi
-            SECTION UI = "XhciDxe"
+        SECTION PE32 = Napali/BOOT.XF.2.2-00101-SDM845WZB-1/QcomPkg/Drivers/XhciDxe/XhciDxe.efi
+        SECTION UI = "XhciDxe"
     }
 
-    # INF Napali/BOOT.XF.2.2-00101-SDM845WZB-1/QcomPkg/Drivers/UsbBusDxe/UsbBusDxe.inf
     FILE DRIVER = 240612B7-A063-11D4-9A3A-0090273FC14D {
-            SECTION PE32 = Napali/BOOT.XF.2.2-00101-SDM845WZB-1/QcomPkg/Drivers/UsbBusDxe/UsbBusDxe.efi
-            SECTION UI = "UsbBusDxe"
+        SECTION PE32 = Napali/BOOT.XF.2.2-00101-SDM845WZB-1/QcomPkg/Drivers/UsbBusDxe/UsbBusDxe.efi
+        SECTION UI = "UsbBusDxe"
     }
 
-    # INF Napali/BOOT.XF.2.2-00101-SDM845WZB-1/QcomPkg/Drivers/UsbKbDxe/UsbKbDxe.inf
 #    FILE DRIVER = 2D2E62CF-9ECF-43B7-8219-94E7FC713DFE {
-#            SECTION PE32 = Napali/BOOT.XF.2.2-00101-SDM845WZB-1/QcomPkg/Drivers/UsbKbDxe/UsbKbDxe.efi
-#            SECTION UI = "UsbKbDxe"
+#        SECTION PE32 = Napali/BOOT.XF.2.2-00101-SDM845WZB-1/QcomPkg/Drivers/UsbKbDxe/UsbKbDxe.efi
+#        SECTION UI = "UsbKbDxe"
 #    }
 
-    # INF Napali/BOOT.XF.2.2-00101-SDM845WZB-1/QcomPkg/Drivers/UsbMassStorageDxe/UsbMassStorageDxe.inf
     FILE DRIVER = 9FB4B4A7-42C0-4BCD-8540-9BCC6711F83E {
-            SECTION PE32 = Napali/BOOT.XF.2.2-00101-SDM845WZB-1/QcomPkg/Drivers/UsbMassStorageDxe/UsbMassStorageDxe.efi
-            SECTION UI = "UsbMassStorageDxe"
+        SECTION PE32 = Napali/BOOT.XF.2.2-00101-SDM845WZB-1/QcomPkg/Drivers/UsbMassStorageDxe/UsbMassStorageDxe.efi
+        SECTION UI = "UsbMassStorageDxe"
     }
 
-#    INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/UsbConfigDxe/UsbConfigDxe.inf
     INF Napali/BOOT.XF.2.2-00101-SDM845WZB-1/QcomPkg/Drivers/UsbConfigDxe/UsbConfigDxe.inf
     INF Napali/BOOT.XF.2.2-00101-SDM845WZB-1/QcomPkg/Drivers/UsbInitDxe/UsbInitDxe.inf
     INF Napali/BOOT.XF.2.2-00101-SDM845WZB-1/QcomPkg/Drivers/UsbDeviceDxe/UsbDeviceDxe.inf
     INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/ButtonsDxe/ButtonsDxe.inf
     INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/TsensDxe/TsensDxe.inf
 
-#    INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/LimitsDxe/LimitsDxe.inf
     FILE DRIVER = f09ad92e-4e91-490f-ab99-e69939b840b2 {
-            SECTION UI = "LimitsDxe"
-            SECTION PE32 = Napali/BOOT.XF.2.2-00101-SDM845WZB-1/QcomPkg/Drivers/LimitsDxe/LimitsDxe.efi
+        SECTION UI = "LimitsDxe"
+        SECTION PE32 = Napali/BOOT.XF.2.2-00101-SDM845WZB-1/QcomPkg/Drivers/LimitsDxe/LimitsDxe.efi
     }
     INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/GpiDxe/GpiDxe.inf
 #    INF Napali/BOOT.XF.2.2-00101-SDM845WZB-1/QcomPkg/Drivers/PciHostBridgeDxe/PciHostBridgeDxe.inf
 
 
-#    INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/HashDxe/HashDxe.inf
     FILE DRIVER = 3adf8dda-1850-44c5-8c63-bb991849bc6f {
-            SECTION UI = "HashDxe"
-            SECTION PE32 = Napali/BOOT.XF.2.2-00101-SDM845WZB-1/QcomPkg/Drivers/HashDxe/HashDxe.efi
+        SECTION UI = "HashDxe"
+        SECTION PE32 = Napali/BOOT.XF.2.2-00101-SDM845WZB-1/QcomPkg/Drivers/HashDxe/HashDxe.efi
     }
 
-#    INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/RNGDxe/RngDxe.inf
     FILE DRIVER = b0d3689e-11f8-43c6-8ece-023a29cec35b {
-            SECTION UI = "RngDxe"
-            SECTION PE32 = Napali/BOOT.XF.2.2-00101-SDM845WZB-1/QcomPkg/Drivers/RNGDxe/RngDxe.efi
+        SECTION UI = "RngDxe"
+        SECTION PE32 = Napali/BOOT.XF.2.2-00101-SDM845WZB-1/QcomPkg/Drivers/RNGDxe/RngDxe.efi
     }
 
     INF Napali/BOOT.XF.2.2-00101-SDM845WZB-1/QcomPkg/Drivers/AdapterInformationDxe/AdapterInformationDxe.inf
@@ -144,9 +135,7 @@ APRIORI DXE {
     INF MdeModulePkg/Universal/Console/ConPlatformDxe/ConPlatformDxe.inf
     INF MdeModulePkg/Universal/Console/ConSplitterDxe/ConSplitterDxe.inf
 
-#    INF MdeModulePkg/Universal/Console/GraphicsConsoleDxe/GraphicsConsoleDxe.inf
     INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/MdeModulePkg/Universal/Console/GraphicsConsoleDxe/GraphicsConsoleDxe.inf
     INF AndromedaPkg/Driver/SimpleFbDxe/SimpleFbDxe.inf
     INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/SimpleTextInOutSerialDxe/SimpleTextInOutSerial.inf
-
 }
