@@ -21,7 +21,6 @@ APRIORI DXE {
     INF WarlockPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/HWIODxe/HWIODxe.inf
     INF WarlockPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/ChipInfoDxe/ChipInfoDxe.inf
     INF WarlockPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/PlatformInfoDxe/PlatformInfoDxe.inf
-    #INF WarlockPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/HALIOMMUDxe/HALIOMMUDxe.inf
     INF QcomPkg/PatchedBinaries/HALIOMMUDxe.inf
     INF WarlockPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/ULogDxe/ULogDxe.inf
     INF WarlockPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/CmdDbDxe/CmdDbDxe.inf
@@ -30,13 +29,11 @@ APRIORI DXE {
     INF WarlockPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/PdcDxe/PdcDxe.inf
     INF WarlockPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/ClockDxe/ClockDxe.inf
 
-    #INF WarlockPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/DiskIoDxe/DiskIoDxe.inf
     FILE DRIVER = 6b38f7b4-ad98-40e9-9093-aca2b5a253c4 {
         SECTION PE32 = WarlockPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/DiskIoDxe/DiskIoDxe.efi
         SECTION UI = "DiskIoDxe"
     }
 
-    #INF WarlockPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/PartitionDxe/PartitionDxe.inf
     FILE DRIVER = 1fa1f39e-feff-4aae-bd7b-38a070a3b609 {
         SECTION PE32 = WarlockPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/PartitionDxe/PartitionDxe.efi
         SECTION UI = "PartitionDxe"
@@ -89,10 +86,9 @@ APRIORI DXE {
     INF MdeModulePkg/Universal/Console/ConPlatformDxe/ConPlatformDxe.inf
     INF MdeModulePkg/Universal/Console/ConSplitterDxe/ConSplitterDxe.inf
 
-    #INF MdeModulePkg/Universal/Console/GraphicsConsoleDxe/GraphicsConsoleDxe.inf
     FILE DRIVER = cccb0c28-4b24-11d5-9a5a-0090273fc14d {
-            SECTION PE32 = WarlockPkg/Device/$(TARGET_DEVICE)/Binaries/MdeModulePkg/Universal/Console/GraphicsConsoleDxe/GraphicsConsoleDxe.efi
-            SECTION UI = "GraphicsConsoleDxe"
+        SECTION PE32 = WarlockPkg/Device/$(TARGET_DEVICE)/Binaries/MdeModulePkg/Universal/Console/GraphicsConsoleDxe/GraphicsConsoleDxe.efi
+        SECTION UI = "GraphicsConsoleDxe"
     }
 
     INF AndromedaPkg/Driver/SimpleFbDxe/SimpleFbDxe.inf

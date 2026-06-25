@@ -30,8 +30,8 @@ APRIORI DXE {
     INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/ShmBridgeDxe/ShmBridgeDxeLA.inf
 
     FILE DRIVER = 4b4973ee-401b-4f36-a6a9-533dfccdfc33 {
-            SECTION PE32 = $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/TzDxe/ScmDxeLA.efi
-            SECTION UI = "ScmDxeLA"
+        SECTION PE32 = $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/TzDxe/ScmDxeLA.efi
+        SECTION UI = "ScmDxeLA"
     }
 
     INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/TLMMDxe/TLMMDxe.inf
@@ -40,13 +40,13 @@ APRIORI DXE {
     INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/PatchedBinaries/PmicDxeLa.inf
 
     FILE DRIVER = 6b38f7b4-ad98-40e9-9093-aca2b5a253c4 {
-            SECTION PE32 = $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/MdeModulePkg/Universal/Disk/DiskIoDxe/DiskIoDxe.efi
-            SECTION UI = "DiskIoDxe"
+        SECTION PE32 = $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/MdeModulePkg/Universal/Disk/DiskIoDxe/DiskIoDxe.efi
+        SECTION UI = "DiskIoDxe"
     }
 
     FILE DRIVER = 1fa1f39e-feff-4aae-bd7b-38a070a3b609 {
-            SECTION PE32 = $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/MdeModulePkg/Universal/Disk/PartitionDxe/PartitionDxe.efi
-            SECTION UI = "PartitionDxe"
+        SECTION PE32 = $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/MdeModulePkg/Universal/Disk/PartitionDxe/PartitionDxe.efi
+        SECTION UI = "PartitionDxe"
     }
 
     INF MdeModulePkg/Universal/Disk/UnicodeCollation/EnglishDxe/EnglishDxe.inf
@@ -56,8 +56,8 @@ APRIORI DXE {
     INF FatPkg/EnhancedFatDxe/Fat.inf
 
     FILE DRIVER = cf6dfc66-14ab-4e13-84db-9c02912d1404 {
-            SECTION PE32 = $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/TzDxe/TzDxeLA.efi
-            SECTION UI = "TzDxeLA"
+        SECTION PE32 = $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/TzDxe/TzDxeLA.efi
+        SECTION UI = "TzDxeLA"
     }
 
     INF QcomPkg/PatchedBinaries/MsAbstractLayer.inf
@@ -67,8 +67,8 @@ APRIORI DXE {
     INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/ResetRuntimeDxe/ResetRuntimeDxe.inf
 
     FILE DRIVER = 1c04f529-0612-4319-9315-b2e75c16810a {
-            SECTION PE32 = QcomPkg/PatchedBinaries/FeatureEnablerDxe.efi
-            SECTION UI = "FeatureEnablerDxe"
+        SECTION PE32 = QcomPkg/PatchedBinaries/FeatureEnablerDxe.efi
+        SECTION UI = "FeatureEnablerDxe"
     }
 
     INF AndromedaPkg/Driver/SimpleFbDxe/SimpleFbDxe.inf
@@ -94,23 +94,23 @@ APRIORI DXE {
     INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/XhciPciEmulationDxe/XhciPciEmulationDxe.inf
 
     FILE DRIVER = B7F50E91-A759-412C-ADE4-DCD03E7F7C28 {
-            SECTION PE32 = $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/XhciDxe/XhciDxe.efi
-            SECTION UI = "XhciDxe"
+        SECTION PE32 = $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/XhciDxe/XhciDxe.efi
+        SECTION UI = "XhciDxe"
     }
 
     FILE DRIVER = 240612B7-A063-11D4-9A3A-0090273FC14D {
-            SECTION PE32 = $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/UsbBusDxe/UsbBusDxe.efi
-            SECTION UI = "UsbBusDxe"
+        SECTION PE32 = $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/UsbBusDxe/UsbBusDxe.efi
+        SECTION UI = "UsbBusDxe"
     }
 
     FILE DRIVER = 2D2E62CF-9ECF-43B7-8219-94E7FC713DFE {
-            SECTION PE32 = $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/UsbKbDxe/UsbKbDxe.efi
-            SECTION UI = "UsbKbDxe"
+        SECTION PE32 = $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/UsbKbDxe/UsbKbDxe.efi
+        SECTION UI = "UsbKbDxe"
     }
 
     FILE DRIVER = 9FB4B4A7-42C0-4BCD-8540-9BCC6711F83E {
-            SECTION PE32 = $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/UsbMassStorageDxe/UsbMassStorageDxe.efi
-            SECTION UI = "UsbMassStorageDxe"
+        SECTION PE32 = $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/UsbMassStorageDxe/UsbMassStorageDxe.efi
+        SECTION UI = "UsbMassStorageDxe"
     }
 
     INF QcomPkg/PatchedBinaries/UsbConfigDxe.inf
@@ -118,13 +118,13 @@ APRIORI DXE {
     INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/GpiDxe/GpiDxe.inf
 
     FILE DRIVER = 5f0937cd-73f9-445e-b320-bb6fd5d3cbde {
-            SECTION PE32 = $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/UCDxe/UCDxe.efi
-            SECTION UI = "UCDxe"
+        SECTION PE32 = $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/UCDxe/UCDxe.efi
+        SECTION UI = "UCDxe"
     }
 
     FILE DRIVER = b0d3689e-11f8-43c6-8ece-023a29cec35b {
-            SECTION PE32 = $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/RNGDxe/RngDxe.efi
-            SECTION UI = "RngDxe"
+        SECTION PE32 = $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/RNGDxe/RngDxe.efi
+        SECTION UI = "RngDxe"
     }
 
     INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/SimpleTextInOutSerialDxe/SimpleTextInOutSerial.inf
