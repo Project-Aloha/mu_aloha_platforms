@@ -69,12 +69,6 @@ APRIORI DXE {
         SECTION PE32 = SurfaceDuo1Pkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/CipherDxe/CipherDxe.efi
     }
 
-    FILE DRIVER = b0d3689e-11f8-43c6-8ece-023a29cec35b {
-        SECTION UI = "RngDxe"
-        SECTION RAW = Epsilon/BOOT.XF.3.0-00527-SM8150LZB-1/QcomPkg/Drivers/RNGDxe/RngDxe.raw
-        SECTION PE32 = SurfaceDuo1Pkg/Device/$(TARGET_DEVICE)/Binaries//QcomPkg/Drivers/RNGDxe/RngDxe.efi
-    }
-
     INF SurfaceDuo1Pkg/Device/lg-mh2lm/Binaries/QcomPkg/Drivers/PmicDxe/PmicDxeLa.inf
 
 #    FILE DRIVER = 3AEC2036-C55A-569F-9BD6-B144A55DF39F {
@@ -83,6 +77,16 @@ APRIORI DXE {
 #    }
 
 #   INF SurfaceDuo1Pkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/VariableDxe/VariableDxe.inf
+    !include $(SHARED_CRYPTO_PATH)/Driver/Bin/CryptoDriver.DXE.inc.fdf
+    !include $(SHARED_CRYPTO_PATH)/Driver/Bin/CryptoDriver.RUNTIMEDXE.inc.fdf
+
+    INF SurfaceDuo1Pkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/RNGDxe/RngDxe.inf
+    FILE DRIVER = b0d3689e-11f8-43c6-8ece-023a29cec35b {
+        SECTION UI = "RngDxe"
+        SECTION RAW = Epsilon/BOOT.XF.3.0-00527-SM8150LZB-1/QcomPkg/Drivers/RNGDxe/RngDxe.raw
+        SECTION PE32 = SurfaceDuo1Pkg/Device/$(TARGET_DEVICE)/Binaries//QcomPkg/Drivers/RNGDxe/RngDxe.efi
+    }
+
     INF MdeModulePkg/Universal/Variable/RuntimeDxe/VariableRuntimeDxe.inf
     INF SurfaceDuo1Pkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/DisplayDxe/DisplayDxe.inf
 
