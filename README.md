@@ -310,6 +310,7 @@ sudo docker run -v $(pwd):/build/ -it mu:v1
 |--------------------------------------|------------------------|-----------------|----------------------------------------------------|
 | Xiaomi Pad6 S Pro                    | xiaomi-sheng           | ❌              | None                                               |
 | Xiaomi K60 Pro                       | xiaomi-socrates        | ❌              | None                                               |
+| Xiaomi K70                           | xiaomi-vermeer        | ❌              | None                                               |
 
 
 ### Snapdragon 8 Elite Gen 5 (*SM8850*)
