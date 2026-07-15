@@ -1,0 +1,55 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Build selected UEFI platform
+
+on:
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: Platform to build
+        required: true
+        type: choice
+        options:
+          - IstariPkg
+          - KaanapaliPkg
+          - KailuaPkg
+          - KodiakPkg
+          - KonaPkg
+          - MooreaPkg
+          - NapaliPkg
+          - NazgulPkg
+          - RennellPkg
+          - SurfaceDuo1Pkg
+          - SurfaceDuo2Pkg
+          - WaipioPkg
+          - WarlockPkg
+
+env:
+  WM_CI_BUILD: true
+
+jobs:
+  build:
+    uses: Project-Aloha/mu_aloha_platforms/.github/workflows/build_platform.yml@main
+    with:
+      platform: ${{ inputs.platform }}
+    secrets: inherit
+
+  package:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: Build
+          merge-multiple: true
+
+      - name: Upload ${{ inputs.platform }} artifact
+        uses: actions/upload-artifact@v6
+        with:
+          name: uefi-images-${{ inputs.platform }}
+          path: Build/${{ inputs.platform }}/ci_artifacts
+          compression-level: 9
