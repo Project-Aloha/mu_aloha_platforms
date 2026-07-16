@@ -1,0 +1,121 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Build UEFI for selected Device
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'Platforms/**/Device/**'
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+      device:
+        description: Device to build
+        required: true
+        type: choice
+        options:
+          - asus-I001DC
+          - ayaneo-aps
+          - ayn-odin2
+          - eebbk-h130
+          - lg-alpha
+          - lg-beta
+          - lg-flash
+          - lg-mh2lm
+          - lg-mh2lm5g
+          - motorola-nio
+          - nubia-nx729j
+          - nubia-tp1803
+          - oneplus-dumpling
+          - oneplus-guacamole
+          - oneplus-guacamoleb
+          - oneplus-hotdog
+          - oneplus-hotdogb
+          - oneplus-hotdogg
+          - oneplus-plk110
+          - oneplus-salami
+          - oppo-pclm10
+          - qcom-hdk8150
+          - qcom-hdk8450
+          - qcom-hhg8350
+          - qcom-mtp50
+          - qcom-mtp670
+          - qcom-mtp8150
+          - qcom-mtp8250
+          - qcom-mtp8350
+          - qcom-mtp8450
+          - qcom-mtp8550
+          - qcom-mtp8996
+          - qcom-qrd7125
+          - qcom-qrd7150
+          - qcom-qrd7325
+          - qcom-qrd8150
+          - qcom-qrd8250
+          - qcom-qrd8350
+          - qcom-qrd845
+          - qcom-qrd8550
+          - realme-rmx2086
+          - samsung-a52sxq
+          - samsung-beyond1qlte
+          - samsung-gts6lwifi
+          - samsung-gts7fewifi
+          - samsung-q2q
+          - samsung-winner
+          - xiaomi-andromeda
+          - xiaomi-cepheus
+          - xiaomi-haydn
+          - xiaomi-miatoll
+          - xiaomi-nabu
+          - xiaomi-raphael
+          - xiaomi-sheng
+          - xiaomi-socrates
+          - xiaomi-surya
+          - xiaomi-umi
+          - xiaomi-vayu
+          - xiaomi-venus
+
+# Indicate that we are running in CI
+env:
+  WM_CI_BUILD: true
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # Detect which devices need to be built based on the trigger
+  detect:
+    runs-on: ubuntu-latest
+    outputs:
+      devices: ${{ steps.set.outputs.devices }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 2
+      - name: Determine devices to build
+        id: set
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo 'devices=["${{ inputs.device }}"]' >> $GITHUB_OUTPUT
+          else
+            base=$(git rev-parse HEAD~1 2>/dev/null || git rev-parse --root HEAD)
+            devices=$(git diff --name-only "$base" HEAD \
+              | grep -oP 'Platforms/[^/]+/Device/\K[^/]+' \
+              | sort -u \
+              | jq -R . | jq -sc .)
+            echo "devices=$devices" >> $GITHUB_OUTPUT
+          fi
+
+  # This workflow contains a single job called "build"
+  build:
+    needs: detect
+    if: needs.detect.outputs.devices != '[]'
+    strategy:
+      fail-fast: false
+      matrix:
+        device: ${{ fromJson(needs.detect.outputs.devices) }}
+    uses: ./.github/workflows/build_device.yml
+    with:
+      target: ${{ matrix.device }}
+    secrets: inherit
+
