@@ -4,7 +4,7 @@ gAndromedaPkgTokenSpaceGuid.PcdMipiFrameBufferHeight|2340
 
 # Display Caller
 gAndromedaPkgTokenSpaceGuid.PcdDisplayCallerExitDisableDisplay|FALSE
-gAndromedaPkgTokenSpaceGuid.PcdDisplayCallerStallBeforeEnable|0
+gAndromedaPkgTokenSpaceGuid.PcdDisplayCallerStallBeforeEnable|1000
 
 # Smbios Info
 gAndromedaPkgTokenSpaceGuid.PcdSmbiosSystemBrand|"XiaoMi"
