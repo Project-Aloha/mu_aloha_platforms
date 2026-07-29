@@ -8,7 +8,7 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - 'Platforms/**/Device/**'
+      - 'Platforms/*/Device/**'
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
@@ -91,19 +91,31 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with:
-          fetch-depth: 2
+          fetch-depth: 0
+          filter: blob:none
       - name: Determine devices to build
         id: set
+        env:
+          BEFORE: ${{ github.event.before }}
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo 'devices=["${{ inputs.device }}"]' >> $GITHUB_OUTPUT
+            jq -nc --arg d "${{ inputs.device }}" '[{device: $d, subject: $d}]' \
+              | sed 's/^/devices=/' >> $GITHUB_OUTPUT
           else
-            base=$(git rev-parse HEAD~1 2>/dev/null || git rev-parse --root HEAD)
-            devices=$(git diff --name-only "$base" HEAD \
-              | grep -oP 'Platforms/[^/]+/Device/\K[^/]+' \
-              | sort -u \
-              | jq -R . | jq -sc .)
-            echo "devices=$devices" >> $GITHUB_OUTPUT
+            if [ -n "$BEFORE" ] && git cat-file -e "$BEFORE^{commit}" 2>/dev/null; then
+              base="$BEFORE"
+            else
+              base=$(git rev-list --max-parents=0 HEAD | tail -n 1)
+            fi
+            for sha in $(git rev-list --reverse "$base".."HEAD"); do
+              subject=$(git log -1 --format=%s "$sha")
+              git show --name-only --format= "$sha" \
+                | grep -oP 'Platforms/[^/]+/Device/\K[^/]+' \
+                | sort -u \
+                | while read -r dev; do
+                    jq -nc --arg d "$dev" --arg s "$subject" '{device: $d, subject: $s}'
+                  done
+            done | jq -sc 'group_by(.device) | map(last)' | sed 's/^/devices=/' >> $GITHUB_OUTPUT
           fi
 
   # This workflow contains a single job called "build"
@@ -113,7 +125,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        device: ${{ fromJson(needs.detect.outputs.devices) }}
+        include: ${{ fromJson(needs.detect.outputs.devices) }}
+    name: "${{ matrix.device }}: ${{ matrix.subject }}"
     uses: ./.github/workflows/build_device.yml
     with:
       target: ${{ matrix.device }}
