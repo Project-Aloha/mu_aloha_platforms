@@ -88,7 +88,7 @@ sudo docker run -v $(pwd):/build/ -it mu:v1
   - Use `-d all -p <target-platform>` to build all devices in same platform.
   - Use `-i` or `--init` to reinitialize build environment. Generally it's useful after a rebase update.
 
-- If the build is sucessful, the bootable artifact can be found at Build/xxxxPkg/\<target-device\>.img.
+- If the build is successful, the bootable artifact can be found at Build/xxxxPkg/\<target-device\>.img.
 
 ## Target list
 
