@@ -7,7 +7,7 @@
     },
     "default_aboot_args": {
         "header_version": 3,
-        "kernel_compressed": false,
+        "kernel_compressed": true,
         "emptyramdisk": false,
         "cmdline": "",
         "pagesize": 4096,
