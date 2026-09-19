@@ -78,7 +78,7 @@ MooreaPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/DDRInfoDxe/DDRInfoDxe
 #QcomPkg/Drivers/UsbDeviceDxe/UsbDeviceDxe.inf
 #QcomPkg/Drivers/HashDxe/HashDxe.inf
 #QcomPkg/Drivers/CipherDxe/CipherDxe.inf
-#QcomPkg/Drivers/RNGDxe/RngDxe.inf
+MooreaPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/RNGDxe/RngDxe.inf
 #QcomPkg/Drivers/QcomBds/QcomBds.inf
 MooreaPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/PILDxe/PILDxe.inf
 MooreaPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Application/QcomChargerApp/QcomChargerApp.inf

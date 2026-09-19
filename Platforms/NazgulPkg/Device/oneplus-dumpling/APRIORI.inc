@@ -56,6 +56,7 @@ APRIORI DXE {
     INF NazgulPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/ResetRuntimeDxe/ResetRuntimeDxe.inf
     INF Nazgul/BOOT.XF.1.2.2-00131-M8998WZB-1/QcomPkg/Drivers/I2CDxe/I2CDxe.inf
     INF NazgulPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/PmicDxe/PmicDxeLa.inf
+    INF NazgulPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/RNGDxe/RngDxe.inf
     INF MdeModulePkg/Universal/Variable/RuntimeDxe/VariableRuntimeDxe.inf
 
     INF NazgulPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/EmbeddedMonotonicCounter/EmbeddedMonotonicCounter.inf
@@ -112,10 +113,6 @@ APRIORI DXE {
         SECTION PE32 = Nazgul/BOOT.XF.1.2.2-00131-M8998WZB-1/QcomPkg/Drivers/HashDxe/HashDxe.efi
     }
 
-    FILE DRIVER = b0d3689e-11f8-43c6-8ece-023a29cec35b {
-        SECTION UI = "RngDxe"
-        SECTION PE32 = Nazgul/BOOT.XF.1.2.2-00131-M8998WZB-1/QcomPkg/Drivers/RNGDxe/RngDxe.efi
-    }
     INF NazgulPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/MpPowerDxe/MpPowerDxe.inf
 
     INF Nazgul/BOOT.XF.1.2.2-00131-M8998WZB-1/QcomPkg/Drivers/AdapterInformationDxe/AdapterInformationDxe.inf

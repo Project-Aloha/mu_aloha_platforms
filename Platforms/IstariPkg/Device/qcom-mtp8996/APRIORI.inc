@@ -57,6 +57,7 @@ APRIORI DXE {
     INF IstariPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/ResetRuntimeDxe/ResetRuntimeDxe.inf
     INF IstariPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/I2CDxe/I2CDxe.inf
     INF IstariPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/PmicDxe/PmicDxe.inf
+    INF IstariPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/RNGDxe/RngDxe.inf
     INF MdeModulePkg/Universal/Variable/RuntimeDxe/VariableRuntimeDxe.inf
 #    INF IstariPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/DisplayDxe/DisplayDxe.inf
 
@@ -109,11 +110,6 @@ APRIORI DXE {
     FILE DRIVER = 3adf8dda-1850-44c5-8c63-bb991849bc6f {
         SECTION UI = "HashDxe"
         SECTION PE32 = IstariPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/HashDxe/HashDxe.efi
-    }
-
-    FILE DRIVER = b0d3689e-11f8-43c6-8ece-023a29cec35b {
-        SECTION UI = "RngDxe"
-        SECTION PE32 = IstariPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/RNGDxe/RngDxe.efi
     }
 
     INF IstariPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/MpPowerDxe/MpPowerDxe.inf

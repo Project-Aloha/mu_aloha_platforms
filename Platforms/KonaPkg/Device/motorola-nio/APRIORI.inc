@@ -48,7 +48,8 @@ APRIORI DXE {
         INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/PatchedBinaries/UFSDxe.inf
         INF FatPkg/EnhancedFatDxe/Fat.inf
         INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/TzDxe/TzDxeLA.inf
-        INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/VariableDxe/VariableDxe.inf
+        INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/RNGDxe/RngDxe.inf
+        INF MdeModulePkg/Universal/Variable/RuntimeDxe/VariableRuntimeDxe.inf
 #        INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/QcomWDogDxe/QcomWDogDxe.inf
         INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/DDRInfoDxe/DDRInfoDxe.inf
         INF AndromedaPkg/Driver/SimpleFbDxe/SimpleFbDxe.inf
@@ -137,11 +138,6 @@ APRIORI DXE {
         FILE DRIVER = 20583A66-3C26-4D9E-9A8C-E2DFA2914015 {
                 SECTION PE32 = $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/MacDxe/MacDxe.efi
                 SECTION UI = "MacDxe"
-        }
-
-        FILE DRIVER = B0D3689E-11F8-43C6-8ECE-023A29CEC35B {
-                SECTION PE32 = $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/RNGDxe/RngDxe.efi
-                SECTION UI = "RngDxe"
         }
 
         INF $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/SimpleTextInOutSerialDxe/SimpleTextInOutSerial.inf

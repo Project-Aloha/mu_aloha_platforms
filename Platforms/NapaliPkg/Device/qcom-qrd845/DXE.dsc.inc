@@ -77,7 +77,7 @@ $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/UsbfnDwc3Dxe/Us
 #QcomPkg/Drivers/UsbDeviceDxe/UsbDeviceDxe.inf
 #QcomPkg/Drivers/HashDxe/HashDxe.inf
 #QcomPkg/Drivers/CipherDxe/CipherDxe.inf
-#QcomPkg/Drivers/RNGDxe/RngDxe.inf
+$(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/RNGDxe/RngDxe.inf
 #QcomPkg/Drivers/QcomBds/QcomBds.inf
 $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Application/QcomChargerApp/QcomChargerApp.inf
 #QcomPkg/Drivers/ShmBridgeDxe/ShmBridgeDxeLA.inf

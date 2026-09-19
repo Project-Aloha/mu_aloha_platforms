@@ -71,6 +71,7 @@ APRIORI DXE {
         SECTION UI = "TzDxe"
     }
 
+    INF KailuaPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/RNGDxe/RngDxe.inf
     INF MdeModulePkg/Universal/Variable/RuntimeDxe/VariableRuntimeDxe.inf
 
 #    INF KailuaPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/VariableDxe/VariableDxe.inf
@@ -148,11 +149,6 @@ APRIORI DXE {
         SECTION PE32 = KailuaPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/UCDxe/UCDxe.efi
         SECTION UI = "UCDxe"
     }
-
-#    FILE DRIVER = B0D3689E-11F8-43C6-8ECE-023A29CEC35B {
-#        SECTION UI = "RngDxe"
-#        SECTION PE32 = KailuaPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/RNGDxe/RngDxe.efi
-#    }
 
     INF KailuaPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/SimpleTextInOutSerialDxe/SimpleTextInOutSerial.inf
     INF MdeModulePkg/Universal/Console/ConPlatformDxe/ConPlatformDxe.inf

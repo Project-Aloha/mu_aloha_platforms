@@ -74,6 +74,7 @@ APRIORI DXE {
     INF MdeModulePkg/Universal/HiiDatabaseDxe/HiiDatabaseDxe.inf
 #   INF RennellPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/VariableDxe/VariableDxe.inf
 #   INF RennellPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/QcomWDogDxe/QcomWDogDxe.inf
+    INF RennellPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/RNGDxe/RngDxe.inf
     INF MdeModulePkg/Universal/Variable/RuntimeDxe/VariableRuntimeDxe.inf
 
     INF RennellPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/EmbeddedMonotonicCounter/EmbeddedMonotonicCounter.inf
@@ -141,11 +142,6 @@ APRIORI DXE {
     FILE DRIVER = 5f0937cd-73f9-445e-b320-bb6fd5d3cbde {
         SECTION UI = "CipherDxe"
         SECTION PE32 = RennellPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/CipherDxe/CipherDxe.efi
-    }
-
-    FILE DRIVER = b0d3689e-11f8-43c6-8ece-023a29cec35b {
-        SECTION UI = "RngDxe"
-        SECTION PE32 = RennellPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/RNGDxe/RngDxe.efi
     }
 
     FILE DRIVER = 7861C9D1-43B6-410C-B8A7-C129A9346D9D {
