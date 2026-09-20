@@ -133,7 +133,7 @@ FILE DRIVER = 5f0937cd-73f9-445e-b320-bb6fd5d3cbde {
     SECTION PE32 = RennellPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/CipherDxe/CipherDxe.efi
 }
 
-FILE DRIVER = b0d3689e-11f8-43c6-8ece-023a29cec35b {
+FILE DRIVER = 57643AC9-EACF-4BDE-9935-BD78A866B8CB {
     SECTION UI = "RngDxe"
     SECTION PE32 = RennellPkg/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/RNGDxe/RngDxe.efi
 }

@@ -101,7 +101,7 @@
             SECTION UI = "UCDxe"
     }
 
-    FILE DRIVER = b0d3689e-11f8-43c6-8ece-023a29cec35b {
+    FILE DRIVER = 57643AC9-EACF-4BDE-9935-BD78A866B8CB {
             SECTION PE32 = $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/RNGDxe/RngDxe.efi
             SECTION UI = "RngDxe"
     }

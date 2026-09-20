@@ -135,11 +135,7 @@ FILE DRIVER = 1fa1f39e-feff-4aae-bd7b-38a070a3b609 {
     SECTION UI = "PartitionDxe"
 }
 
-#FILE DRIVER = b0d3689e-11f8-43c6-8ece-023a29cec35b {
-#    SECTION UI = "RngDxe"
-#    SECTION RAW = $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/RNGDxe/RngDxe.raw
-#    SECTION PE32 = $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/RNGDxe/RngDxe.efi
-#}
+INF SecurityPkg/RandomNumberGenerator/RngDxe/RngDxe.inf
 
 #FILE DRIVER = cccb0c28-4b24-11d5-9a5a-0090273fc14d {
 #    SECTION PE32 = $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/MdeModulePkg/Universal/Console/GraphicsConsoleDxe/GraphicsConsoleDxe.efi
