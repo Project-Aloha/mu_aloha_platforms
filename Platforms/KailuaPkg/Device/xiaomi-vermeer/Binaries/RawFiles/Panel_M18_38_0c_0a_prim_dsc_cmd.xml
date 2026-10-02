@@ -1,0 +1,151 @@
+<?xml version=\"1.0\" encoding=\"utf-8\"?>
+<PanelDescription>M18 38 0c 0a Prem Single DSI Cmd Mode Panel with DSC (2160x1916 24bpp) </PanelDescription>
+<Group id=\"Active Timing\">
+ <HorizontalActive>2160</HorizontalActive>
+ <HorizontalFrontPorch>32</HorizontalFrontPorch>
+ <HorizontalBackPorch>32</HorizontalBackPorch>
+ <HorizontalSyncPulse>32</HorizontalSyncPulse>
+ <HorizontalSyncSkew>0</HorizontalSyncSkew>
+ <HorizontalLeftBorder>0</HorizontalLeftBorder>
+ <HorizontalRightBorder>0</HorizontalRightBorder>
+ <VerticalActive>1916</VerticalActive>
+ <VerticalFrontPorch>64</VerticalFrontPorch>
+ <VerticalBackPorch>32</VerticalBackPorch>
+ <VerticalSyncPulse>16</VerticalSyncPulse>
+ <VerticalSyncSkew>0</VerticalSyncSkew>
+ <VerticalTopBorder>0</VerticalTopBorder>
+ <VerticalBottomBorder>0</VerticalBottomBorder>
+ <InvertDataPolarity>False</InvertDataPolarity>
+ <InvertVsyncPolairty>False</InvertVsyncPolairty>
+ <InvertHsyncPolarity>False</InvertHsyncPolarity>
+ <BorderColor>0x0</BorderColor>
+</Group>
+<Group id="Display Interface">
+ <InterfaceType>9</InterfaceType>
+ <InterfaceColorFormat>3</InterfaceColorFormat>
+</Group>
+<Group id="DSI Interface">
+ <DSIChannelId>2</DSIChannelId>
+ <DSIVirtualId>0</DSIVirtualId>
+ <DSIFlags>0x8</DSIFlags>
+ <DSIColorFormat>36</DSIColorFormat>
+ <DSITrafficMode>1</DSITrafficMode>
+ <DSILanes>4</DSILanes>
+ <DSIRefreshRate>0x3C0000</DSIRefreshRate>
+ <DSIDSCEnable>True</DSIDSCEnable>
+ <DSIDSCMajor>1</DSIDSCMajor>
+ <DSIDSCMinor>1</DSIDSCMinor>
+ <DSIDSCScr>0</DSIDSCScr>
+ <DSIDSCProfileID>7</DSIDSCProfileID>
+ <DSIDSCSliceWidth>1080</DSIDSCSliceWidth>
+ <DSIDSCSliceHeight>479</DSIDSCSliceHeight>
+ <DSIDSCSlicePerPacket>2</DSIDSCSlicePerPacket>
+ <DSIBitClockFrequency>1200000000</DSIBitClockFrequency>
+ <DSICmdSwapInterface>False</DSICmdSwapInterface>
+ <DSICmdUsingTrigger>False</DSICmdUsingTrigger>
+ <DSIEnableAutoRefresh>True</DSIEnableAutoRefresh>
+ <DSIAutoRefreshFrameNumDiv>1</DSIAutoRefreshFrameNumDiv>
+ <DSIClockHSForceRequest>1</DSIClockHSForceRequest>
+ <DSITECheckEnable>True</DSITECheckEnable>
+ <DSITEUsingDedicatedTEPin>True</DSITEUsingDedicatedTEPin>
+ <DSITEvSyncStartPos>1916</DSITEvSyncStartPos>
+ <DSITEvSyncInitVal>1916</DSITEvSyncInitVal>
+ <DSILP11AtInit>True</DSILP11AtInit>
+ <DSIControllerMapping>
+  00
+ </DSIControllerMapping>
+</Group>
+<DSIInitSequence>
+ 39 9E 11 00 00 89 30 80 07 7C 08 70 01 DF 04 38 04 38 02 00 03 1C 00 20 3D F1 00 0F 00 0C 00 34 00 1C 18 00 10 F0 03 0C 20 00 06 0B 0B 33 0E 1C 2A 38 46 54 62 69 70 77 79 7B 7D 7E 01 02 01 00 09 40 09 BE 19 FC 19 FA 19 F8 1A 38 1A 78 1A B6 2A F6 2B 34 2B 74 3B 74 6B F4 00
+ 39 9D 01
+ 39 F0 5A 5A
+ 39 B0 00 2A C1
+ 39 C1 C0
+ 39 F0 A5 A5
+ 05 11
+ FF 78
+ 39 F0 5A 5A
+ 39 B0 00 2A C1
+ 39 C1 00
+ 39 F1 F1 A2
+ 39 F0 A5 A5
+ 39 35 00
+ 39 2A 00 00 08 6F
+ 39 2B 00 00 07 7B
+ 39 F0 5A 5A
+ 39 B9 00
+ 39 B0 00 0E B9
+ 39 B9 B1 21
+ 39 B0 00 19 B9
+ 39 B9 08 CC CC CC
+ 39 F0 A5 A5
+ 39 F0 5A 5A
+ 39 B0 00 2D F4
+ 39 F4 10
+ 39 B0 00 01 ED
+ 39 ED 41 60
+ 39 F0 A5 A5
+ 39 F0 5A 5A
+ 39 2B 00 00 07 7B
+ 39 F0 A5 A5
+ 39 F0 5A 5A
+ 39 53 28
+ 39 51 00 00
+ 39 F7 0F
+ 39 F0 A5 A5
+ 39 F0 5A 5A
+ 39 FC 5A 5A
+ 39 B0 00 A5 63
+ 39 63 40
+ 39 B0 00 A3 63
+ 39 63 C0 F0
+ 39 B0 00 1E FE
+ 39 FE 72
+ 39 FC A5 A5
+ 39 F0 A5 A5
+ 39 F0 5A 5A
+ 39 FC 5A 5A
+ 39 71 8D 00 38
+ 39 6C 01 01 00 00 00 00 00 00 00 00 00 00 80 80 80
+ 39 71 8D 00 70
+ 39 6C 01 01 00 00 00 00 00 00 00 00 00 00 80 80 80
+ 39 FC A5 A5
+ 39 F0 A5 A5
+ 39 F0 5A 5A
+ 39 FC 5A 5A
+ 39 B0 00 3A F2
+ 39 F2 00
+ 39 B0 00 15 BD
+ 39 BD 41
+ 39 60 08 01
+ 39 B9 01 01
+ 39 B0 00 41 B9
+ 39 B9 80
+ 39 B0 00 0E 66
+ 39 66 10
+ 39 B0 00 03 F2
+ 39 F2 41
+ 39 F7 0F
+ 39 FC A5 A5
+ 39 F0 A5 A5
+ 39 F0 5A 5A
+ 39 B9 01
+ 39 B0 00 02 B9
+ 39 B9 00 00 00 33
+ 39 F0 A5 A5
+ 05 29
+</DSIInitSequence>
+<DSITermSequence>
+ 05 28
+ FF 14
+ 05 10
+ FF 64
+</DSITermSequence>
+<Group id='Backlight Configuration'>
+ <BacklightType>3</BacklightType>
+ <BacklightPmicControlType>2</BacklightPmicControlType>
+ <BacklightBitWidth>11</BacklightBitWidth>
+ <BacklightDefault>15</BacklightDefault>
+ <SetAfterRenderLogo>True</SetAfterRenderLogo>
+ <DisplayResetInfo>3 1000 1000 10000 0</DisplayResetInfo>
+</Group>
