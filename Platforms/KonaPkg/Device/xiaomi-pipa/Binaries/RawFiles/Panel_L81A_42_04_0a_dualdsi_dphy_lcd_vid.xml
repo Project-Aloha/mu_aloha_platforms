@@ -1,0 +1,120 @@
+<?xml version=\"1.0\" encoding=\"utf-8\"?>
+<PanelDescription>L81A 42 04 0a Dual DSI DPHY Vid Mode LCD Panel (1600x2560 24bpp)</PanelDescription>
+<Group id=\"Active Timing\">
+ <HorizontalActive>1600</HorizontalActive>
+ <HorizontalFrontPorch>60</HorizontalFrontPorch>
+ <HorizontalBackPorch>60</HorizontalBackPorch>
+ <HorizontalSyncPulse>40</HorizontalSyncPulse>
+ <HorizontalSyncSkew>0</HorizontalSyncSkew>
+ <HorizontalLeftBorder>0</HorizontalLeftBorder>
+ <HorizontalRightBorder>0</HorizontalRightBorder>
+ <VerticalActive>2560</VerticalActive>
+ <VerticalFrontPorch>160</VerticalFrontPorch>
+ <VerticalBackPorch>18</VerticalBackPorch>
+ <VerticalSyncPulse>4</VerticalSyncPulse>
+ <VerticalSyncSkew>0</VerticalSyncSkew>
+ <VerticalTopBorder>0</VerticalTopBorder>
+ <VerticalBottomBorder>0</VerticalBottomBorder>
+ <InvertDataPolarity>False</InvertDataPolarity>
+ <InvertVsyncPolairty>False</InvertVsyncPolairty>
+ <InvertHsyncPolarity>False</InvertHsyncPolarity>
+ <BorderColor>0x0</BorderColor>
+</Group>
+<Group id="Display Interface">
+ <InterfaceType>8</InterfaceType>
+ <InterfaceColorFormat>3</InterfaceColorFormat>
+</Group>
+<Group id="DSI Interface">
+ <DSIChannelId>1</DSIChannelId>
+ <DSIVirtualId>0</DSIVirtualId>
+ <DSIColorFormat>36</DSIColorFormat>
+ <DSITrafficMode>1</DSITrafficMode>
+ <DSILanes>4</DSILanes>
+
+ <DSIDSCEnable>True</DSIDSCEnable>
+ <DSIDSCMajor>1</DSIDSCMajor>
+ <DSIDSCMinor>1</DSIDSCMinor>
+ <DSIDSCScr>0</DSIDSCScr>
+ <DSIDSCProfileID>4</DSIDSCProfileID>
+ <DSIDSCSliceWidth>800</DSIDSCSliceWidth>
+ <DSIDSCSliceHeight>20</DSIDSCSliceHeight>
+ <DSIDSCPicWidthSlice>2</DSIDSCPicWidthSlice>
+
+ <DSIHsaHseAfterVsVe>False</DSIHsaHseAfterVsVe>
+ <DSILowPowerModeInHFP>False</DSILowPowerModeInHFP>
+ <DSILowPowerModeInHBP>False</DSILowPowerModeInHBP>
+ <DSILowPowerModeInHSA>False</DSILowPowerModeInHSA>
+ <DSILowPowerModeInBLLPEOF>True</DSILowPowerModeInBLLPEOF>
+ <DSILowPowerModeInBLLP>True</DSILowPowerModeInBLLP>
+ <DSIRefreshRate>0x780000</DSIRefreshRate>
+ <DSIControllerMapping>
+  00 01
+ </DSIControllerMapping>
+ <DSITimingCLKZeroOverride>True</DSITimingCLKZeroOverride>
+ <DSITimingCLKZeroValue>0x1c</DSITimingCLKZeroValue>
+ <DSITimingCLKPrepareOverride>True</DSITimingCLKPrepareOverride>
+ <DSITimingCLKPrepareValue>0x08</DSITimingCLKPrepareValue>
+ <DSITimingCLKTrailOverride>True</DSITimingCLKTrailOverride>
+ <DSITimingCLKTrailValue>0x07</DSITimingCLKTrailValue>
+ <DSITimingHSExitOverride>True</DSITimingHSExitOverride>
+ <DSITimingHSExitValue>0x17</DSITimingHSExitValue>
+ <DSITimingHSZeroOverride>True</DSITimingHSZeroOverride>
+ <DSITimingHSZeroValue>0x16</DSITimingHSZeroValue>
+ <DSITimingHSPrepareOverride>True</DSITimingHSPrepareOverride>
+ <DSITimingHSPrepareValue>0x07</DSITimingHSPrepareValue>
+ <DSITimingHSTrailOverride>True</DSITimingHSTrailOverride>
+ <DSITimingHSTrailValue>0x07</DSITimingHSTrailValue>
+ <DSITimingHSRequestOverride>True</DSITimingHSRequestOverride>
+ <DSITimingHSRequestValue>0x08</DSITimingHSRequestValue>
+ <DSITimingTASureOverride>True</DSITimingTASureOverride>
+ <DSITimingTASureValue>0x00</DSITimingTASureValue>
+ <DSITimingTAGoOverride>True</DSITimingTAGoOverride>
+ <DSITimingTAGoValue>0x02</DSITimingTAGoValue>
+ <DSITimingTAGetOverride>True</DSITimingTAGetOverride>
+ <DSITimingTAGetValue>0x04</DSITimingTAGetValue>
+ <DSITimingCLKPreOverride>True</DSITimingCLKPreOverride>
+ <DSITimingCLKPreValue>0x19</DSITimingCLKPreValue>
+ <DSITimingCLKPostOverride>True</DSITimingCLKPostOverride>
+ <DSITimingCLKPostValue>0x0c</DSITimingCLKPostValue>
+</Group>
+<DSISlaveControllerSkewLines>2</DSISlaveControllerSkewLines>
+<DSIInitSequence>
+ FD 03
+ 39 B9 83 12 1A 55 00
+ 39 BD 01
+ 39 E2 46 06 0C BE 03 3F 0F 57 01 45 10 07 18 01 06 00 00 14 14 14 14 00 00 00 29 14 14 39 4C 1C 00 22 C9 02 02 00 00 93 01 0D 49 0E 4A 00 18 45 60 3E 00 05 7A 00
+ 39 BD 00
+ 39 D1 37
+ 39 BF FD 00 80 9C 10 00 80
+ 39 BA 70 03 A8 92 01 10 00 00 08 3D 02 77 84
+ 39 D9 0C 0C
+ 39 02 BD 00
+ 39 B2 00 6A 40 00 00 14 9E 60 3C 02 80 21 21 00 00 10 27
+ 39 B9 83 12 1A 55 00
+ 39 BD 03
+ 39 E4 99 99 99 AA BB CC DD EE FF FF FF 03 99 99 99 FF 66 4A 99 C6 FF 55 FE 03 AD AD AD E5 1E 57 8F C8 FF AA FF 03
+ 39 BD 01
+ 39 E4 E1 E1 E1 E1 E1 E1 E1 E1 C7 B2 A0 90 81 75 69 5F 55 4C 44 3D 36 2F 2A 24 1E 19 14 10 0D 0C 0A 54 55 55 55 55 55 55 55
+ 39 BD 00
+ 39 B9 00 00 00 00 00
+ 39 35 00
+ 39 51 0F FF
+ 39 53 24
+ 39 11
+ FF 78
+ 39 29
+ FF 14
+</DSIInitSequence>
+<DSITermSequence>
+ FD 03
+ 05 28
+ 05 10
+ FF 46
+</DSITermSequence>
+<Group id='Backlight Configuration'>
+ <BacklightType>2</BacklightType>
+ <BacklightPmicControlType>2</BacklightPmicControlType>
+ <BacklightBitWidth>11</BacklightBitWidth>
+ <BacklightDefault>25</BacklightDefault>
+ <DisplayResetInfo>0 5000 10000 55000 0</DisplayResetInfo>
+</Group>
