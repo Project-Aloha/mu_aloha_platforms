@@ -59,7 +59,7 @@ static ARM_MEMORY_REGION_DESCRIPTOR_EX gDeviceMemoryDescriptorEx[] = {
     {"RAM Partition",     0xFFC00000, 0x40400000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK_XN},
 
     /* RAM partition regions */
-    {"RAM Partition",    0x140000000,0x140000000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK_XN},
+    {"RAM Partition",    0x140000000,0x040000000, AddMem, SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK_XN},
     /* DDR Bank 1 End */
 
     /* Other memory regions */
