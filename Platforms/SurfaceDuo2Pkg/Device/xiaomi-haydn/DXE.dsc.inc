@@ -1,6 +1,7 @@
 [Components.common]
 $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/MdeModulePkg/Universal/Disk/PartitionDxe/PartitionDxe.inf
 $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/PatchedBinaries/ButtonsDxe.inf
+$(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/PatchedBinaries/PciHostBridgeDxe.inf
 QcomPkg/PatchedBinaries/ClockDxe.inf
 QcomPkg/PatchedBinaries/MinidumpTADxe.inf
 QcomPkg/PatchedBinaries/QcomWDogDxe.inf
