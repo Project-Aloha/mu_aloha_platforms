@@ -148,8 +148,15 @@ VOID OslInterceptMain(IN EFI_PHYSICAL_ADDRESS fwpKernelSetupPhase1)
 
   BOOLEAN InjectedShellCode = FindAndInjectIntoOsLoaderArm64TransferToKernel(
       winloadBase,
-      NT_OS_LOADER_ARM64_TRANSFER_TO_KERNEL_FUNCTION_OFFSET_RUBIDIUM,
+      NT_OS_LOADER_ARM64_TRANSFER_TO_KERNEL_FUNCTION_OFFSET_NDA0,
       0x52800015);
+
+  if (!InjectedShellCode) {
+    InjectedShellCode = FindAndInjectIntoOsLoaderArm64TransferToKernel(
+        winloadBase,
+        NT_OS_LOADER_ARM64_TRANSFER_TO_KERNEL_FUNCTION_OFFSET_RUBIDIUM,
+        0x52800015);
+  }
 
   if (!InjectedShellCode) {
     InjectedShellCode = FindAndInjectIntoOsLoaderArm64TransferToKernel(
