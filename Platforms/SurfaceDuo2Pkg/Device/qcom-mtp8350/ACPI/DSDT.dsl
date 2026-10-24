@@ -9868,7 +9868,7 @@ DefinitionBlock ("", "DSDT", 2, "QCOMM ", "SDM8350 ", 0x00000003)
                         )
                     Interrupt (ResourceConsumer, Level, ActiveHigh, Exclusive, ,, )
                     {
-                        0x0000034C,
+                        0x000000A9,
                     }
                 })
                 Return (RBUF) /* \_SB_.BAMD._CRS.RBUF */
@@ -9914,7 +9914,7 @@ DefinitionBlock ("", "DSDT", 2, "QCOMM ", "SDM8350 ", 0x00000003)
                         )
                     Interrupt (ResourceConsumer, Level, ActiveHigh, Exclusive, ,, )
                     {
-                        0x00000347,
+                        0x000000A4,
                     }
                 })
                 Return (RBUF) /* \_SB_.BAMF._CRS.RBUF */
@@ -13175,7 +13175,7 @@ DefinitionBlock ("", "DSDT", 2, "QCOMM ", "SDM8350 ", 0x00000003)
                     }
                     Interrupt (ResourceConsumer, Level, ActiveHigh, Exclusive, ,, )
                     {
-                        0x00000384,
+                        0x000002EA,
                     }
                 })
                 Return (RBUF) /* \_SB_.IPCC._CRS.RBUF */
