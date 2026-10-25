@@ -217,10 +217,13 @@ LinuxLoaderEntry (IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE *SystemTable)
     FindPtnActiveSlot ();
   }
 
+  // The old assignment was left active inside this commented-out key block,
+  // forcing every normal launch into UEFI fastboot. Keep fastboot selected by
+  // the explicit reboot-reason path below until key handling is restored.
   //Status = GetKeyPress (&KeyPressed);
   //if (Status == EFI_SUCCESS) {
   //  if (KeyPressed == SCAN_DOWN)
-      BootIntoFastboot = TRUE;
+  //    BootIntoFastboot = TRUE;
   //  if (KeyPressed == SCAN_UP)
   //    BootIntoRecovery = TRUE;
   //  if (KeyPressed == SCAN_ESC)
