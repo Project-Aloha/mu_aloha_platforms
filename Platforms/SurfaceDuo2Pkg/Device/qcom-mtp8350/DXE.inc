@@ -102,10 +102,7 @@
             SECTION UI = "UCDxe"
     }
 
-    FILE DRIVER = b0d3689e-11f8-43c6-8ece-023a29cec35b {
-            SECTION PE32 = $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/QcomPkg/Drivers/RNGDxe/RngDxe.efi
-            SECTION UI = "RngDxe"
-    }
+    INF SecurityPkg/RandomNumberGenerator/RngDxe/RngDxe.inf
 
     FILE DRIVER = cccb0c28-4b24-11d5-9a5a-0090273fc14d {
         SECTION PE32 = $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Binaries/MdeModulePkg/Universal/Console/GraphicsConsoleDxe/GraphicsConsoleDxe.efi

@@ -78,6 +78,9 @@
   # Notice: PlatformConfigurationMapLib was moved to Device/<device>/Library/
   PlatformConfigurationMapLib|$(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/Library/PlatformConfigurationMapLib/PlatformConfigurationMapLib.inf
 
+  # Platform specific data
+  CrTargetLib|QcomPkg/Library/CrTargetLib/CrTargetLib.inf
+
 !include $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/DXE.dsc.inc
 !include QcomPkg/QcomPkg.dsc.inc
 !include $(PACKAGE_NAME)/Device/$(TARGET_DEVICE)/PcdsFixedAtBuild.dsc.inc
