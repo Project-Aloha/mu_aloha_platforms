@@ -1,0 +1,28 @@
+[Defines]
+  INF_VERSION = 0x0001001B
+  BASE_NAME = LenovoPrePi
+  FILE_GUID = 45ea4560-2718-428b-841e-61935a80842c
+  MODULE_TYPE = SEC
+  VERSION_STRING = 0.1
+[Sources]
+  Entry.S
+  PrePi.c
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  ArmPkg/ArmPkg.dec
+  ArmPlatformPkg/ArmPlatformPkg.dec
+  EmbeddedPkg/EmbeddedPkg.dec
+[LibraryClasses]
+  ArmLib
+  ArmMmuLib
+  BaseLib
+  BaseMemoryLib
+  CacheMaintenanceLib
+  HobLib
+  IoLib
+  PrePiLib
+  PrePiHobListPointerLib
+  FdtLib
+  ExtractGuidedSectionLib
+  LzmaDecompressLib

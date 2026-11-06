@@ -1,0 +1,25 @@
+[Defines]
+  INF_VERSION = 0x0001001B
+  BASE_NAME = LenovoBootDxe
+  FILE_GUID = e1573688-4ebe-4444-b81f-395665e3f6a0
+  MODULE_TYPE = DXE_DRIVER
+  ENTRY_POINT = BootEntry
+[Sources]
+  BootDxe.c
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+[LibraryClasses]
+  UefiDriverEntryPoint
+  UefiBootServicesTableLib
+  DxeServicesTableLib
+  DevicePathLib
+  MemoryAllocationLib
+  BaseLib
+[Protocols]
+  gEfiBdsArchProtocolGuid
+  gEfiSimpleTextInProtocolGuid
+  gEfiSimpleTextOutProtocolGuid
+  gEfiFirmwareVolume2ProtocolGuid
+[Depex]
+  TRUE

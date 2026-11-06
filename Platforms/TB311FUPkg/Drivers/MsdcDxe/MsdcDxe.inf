@@ -1,0 +1,20 @@
+# SPDX-License-Identifier: BSD-2-Clause
+[Defines]
+  INF_VERSION = 0x0001001B
+  BASE_NAME = LenovoMsdcDxe
+  FILE_GUID = ec0e5f6a-dc99-41bc-907a-7537898ba121
+  MODULE_TYPE = DXE_DRIVER
+  ENTRY_POINT = MsdcEntry
+[Sources]
+  MsdcDxe.c
+[Packages]
+  MdePkg/MdePkg.dec
+[LibraryClasses]
+  UefiDriverEntryPoint
+  UefiBootServicesTableLib
+  IoLib
+[Protocols]
+  gEfiBlockIoProtocolGuid
+  gEfiDevicePathProtocolGuid
+[Depex]
+  TRUE

@@ -1,0 +1,11 @@
+# SPDX-License-Identifier: GPL-2.0-only
+[Defines]
+  INF_VERSION = 0x0001001B
+  BASE_NAME = UsbDebugSerialPortLib
+  FILE_GUID = c52e2ee1-d49b-4302-ae22-eb1438cf233e
+  MODULE_TYPE = BASE
+  LIBRARY_CLASS = SerialPortLib
+[Sources]
+  Serial.c
+[Packages]
+  MdePkg/MdePkg.dec

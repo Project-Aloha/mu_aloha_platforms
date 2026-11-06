@@ -1,0 +1,14 @@
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+[Defines]
+  INF_VERSION = 0x0001001B
+  BASE_NAME = DiagnosticDxeEntry
+  FILE_GUID = 1ce0e0aa-54d7-424a-9781-47f01cc097cf
+  MODULE_TYPE = DXE_CORE
+  LIBRARY_CLASS = DxeCoreEntryPoint|DXE_CORE
+[Sources]
+  Entry.c
+[Packages]
+  MdePkg/MdePkg.dec
+[LibraryClasses]
+  BaseLib
+  SerialPortLib

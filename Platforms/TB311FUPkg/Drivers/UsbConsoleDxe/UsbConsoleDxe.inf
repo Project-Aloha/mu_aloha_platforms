@@ -1,0 +1,25 @@
+# SPDX-License-Identifier: GPL-2.0-only
+[Defines]
+  INF_VERSION = 0x0001001B
+  BASE_NAME = LenovoUsbConsoleDxe
+  FILE_GUID = 49ced329-c9da-4837-8ce6-b0123ce9845e
+  MODULE_TYPE = DXE_DRIVER
+  ENTRY_POINT = UsbEntry
+[Sources]
+  UsbConsoleDxe.c
+  musb-cdc.h
+  usb-phy.h
+[Packages]
+  MdePkg/MdePkg.dec
+[LibraryClasses]
+  UefiDriverEntryPoint
+  UefiBootServicesTableLib
+  BaseMemoryLib
+  PrintLib
+[Protocols]
+  gEfiSimpleTextInProtocolGuid
+  gEfiSimpleTextOutProtocolGuid
+  gEfiDevicePathProtocolGuid
+  gEfiTimerArchProtocolGuid
+[Depex]
+  gEfiTimerArchProtocolGuid
