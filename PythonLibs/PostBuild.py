@@ -13,6 +13,7 @@ import os
 import json
 import mkbootimg
 import shlex
+import subprocess
 
 
 class Bootimg:
@@ -26,6 +27,7 @@ class Bootimg:
     os_version: str = "17.0.0"
     os_patch_level: str = "2026-06-18"
     second_offset: int = 0
+    avb_args = None
 
     # Paths
     fd_path: str = ""           # UEFI FD path
@@ -65,6 +67,8 @@ class Bootimg:
             logging.info("ABoot pack paras override isn't appointed.")
 
     def parseConfiguration(self, cfg):
+        # Optional avbtool add_hash_footer arguments; omitted by default.
+        self.avb_args = cfg.get("avb_args", self.avb_args)
         cfg = cfg.get("default_aboot_args", {})
         self.header_version = cfg.get(
             "header_version", self.header_version)
@@ -139,8 +143,20 @@ class Bootimg:
             # Write to payload.
             payload_file.write(payload_data)
 
-            # Pack boot image.
-            logging.info("Writing " + self.device_name + '.img')
-            paras = self.generateMkbootimgParameters()
-            logging.info(f"Packing boot with \"{shlex.join(paras)}\"")
-            mkbootimg.main(paras)
+        # Close the payload before mkbootimg reads it.
+        logging.info("Writing " + self.device_name + '.img')
+        paras = self.generateMkbootimgParameters()
+        logging.info(f"Packing boot with \"{shlex.join(paras)}\"")
+        mkbootimg.main(paras)
+        if self.avb_args:
+            # Place fresh AVB metadata at the partition end instead of relying
+            # on a footer left by an earlier image on the device.
+            args = [os.environ.get("AVBTOOL", "avbtool"), "add_hash_footer",
+                    "--image", self.output_path] + self.avb_args
+            logging.info("Adding AVB footer with \"%s\"", shlex.join(args))
+            try:
+                subprocess.run(args, check=True)
+            except (OSError, subprocess.CalledProcessError):
+                # Do not leave an incomplete image available for flashing.
+                os.remove(self.output_path)
+                raise

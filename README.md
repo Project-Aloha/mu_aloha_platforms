@@ -41,6 +41,7 @@ Please see https://aloha.firmware.icu/ for some tutorials.
   - git-core, git
   - build-essential
   - clangpdb (or higher), llvm, ggc-aarch64-linux-gnu
+  - avbtool for devices enabling AVB metadata (installed by `build_setup.sh` and the Dockerfile)
 - Exported CLANGPDB_BIN environment variable pointing to LLVM 10 binary folder
 - Exported CLANGPDB_AARCH64_PREFIX variable equalling to aarch64-linux-gnu-
 

@@ -1,0 +1,15 @@
+{
+  "avb_args": [
+    "--partition_size", "100663296",
+    "--partition_name", "boot",
+    "--algorithm", "NONE",
+    "--hash_algorithm", "sha256",
+    "--salt", "55d1056dd3d11e8cb5ab069a6ccb041731a5d03daadcca6d611fe1f8b3952b05",
+    "--rollback_index", "1738713600",
+    "--rollback_index_location", "0",
+    "--flags", "0",
+    "--prop", "com.android.build.boot.fingerprint:Lenovo/TB322FC_PRC/TB322FC:16/BQ2A.250610.001-BP2A.250605.031.A3/ZUXOS_1.5.10.259_260611_PRC:user/release-keys",
+    "--prop", "com.android.build.boot.os_version:15",
+    "--prop", "com.android.build.boot.security_patch:2025-02-05"
+  ]
+}

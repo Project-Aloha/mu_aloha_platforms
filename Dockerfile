@@ -20,6 +20,8 @@ ENV LANG en_US.utf8
 WORKDIR /build
 COPY . .
 
+RUN bash scripts/install_avbtool.sh
+
 RUN pip install --upgrade -r pip-requirements.txt && git config --global --add safe.directory '*'
 
 CMD ["/bin/bash"]
