@@ -1,0 +1,5 @@
+[Defines]
+  DEC_SPECIFICATION              = 0x00010005
+  PACKAGE_NAME                   = PakalaPkg
+  PACKAGE_GUID                   = 5fd522a5-b671-429f-957f-75113dd02435
+  PACKAGE_VERSION                = 0.1
