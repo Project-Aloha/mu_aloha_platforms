@@ -40,7 +40,7 @@ jobs:
   # This workflow contains three jobs called "setup" "build" and "package"
   setup:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     outputs:
       matrix: ${{ steps.matrix.outputs.value }}
