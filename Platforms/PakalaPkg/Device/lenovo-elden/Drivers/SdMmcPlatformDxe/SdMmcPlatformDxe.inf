@@ -1,0 +1,29 @@
+[Defines]
+  INF_VERSION = 0x0001001B
+  BASE_NAME = SdMmcPlatformDxe
+  FILE_GUID = 87503222-9d17-4503-ab62-dfc783604305
+  MODULE_TYPE = DXE_DRIVER
+  ENTRY_POINT = EldenSdMmcPlatformEntryPoint
+[Sources]
+  SdMmcPlatformDxe.c
+  SdPower.c
+  SdPower.h
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  AndromedaPkg/AndromedaPkg.dec
+[LibraryClasses]
+  UefiDriverEntryPoint
+  UefiBootServicesTableLib
+  BaseLib
+  NonDiscoverableDeviceRegistrationLib
+  IoLib
+  TimerLib
+[Protocols]
+  gEfiClockProtocolGuid
+  gEdkiiSdMmcOverrideProtocolGuid
+  gEfiPciIoProtocolGuid
+[Guids]
+  gEfiEventExitBootServicesGuid
+[Depex]
+  gEfiClockProtocolGuid
