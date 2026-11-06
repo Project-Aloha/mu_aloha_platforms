@@ -86,5 +86,9 @@ EFI_DEVICE_PATH_PROTOCOL **EFIAPI GetPlatformConnectList(VOID)
   // Connect boot media after console setup. The controller DXE drivers own
   // hardware initialization; keep boot selection in the common BDS policy.
   EldenConnectStorage();
+  // ABL counts attempts to boot Aloha, not the eventual EFI application.
+  // Acknowledge once storage and consoles are usable, including setup-only
+  // boots, so repeated visits to FrontPage do not exhaust the retry counter.
+  EldenAcknowledgeBoot();
   return NULL;
 }

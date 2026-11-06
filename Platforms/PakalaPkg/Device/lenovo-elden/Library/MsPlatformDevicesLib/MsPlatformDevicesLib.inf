@@ -8,6 +8,7 @@
   MsPlatformDevicesLib.c
   MsPlatformDevicesLib.h
   StorageConnect.c
+  AndroidBootSlot.c
 [Packages]
   PakalaPkg/PakalaPkg.dec
   AndromedaPkg/AndromedaPkg.dec
@@ -30,3 +31,5 @@
   gEdkiiNonDiscoverableDeviceProtocolGuid
   gEfiExtScsiPassThruProtocolGuid
   gEfiScsiIoProtocolGuid
+  gEfiBlockIoProtocolGuid
+  gEfiPartitionInfoProtocolGuid

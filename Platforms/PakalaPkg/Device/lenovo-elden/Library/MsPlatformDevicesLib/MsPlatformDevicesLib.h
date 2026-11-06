@@ -5,5 +5,6 @@
 #include <Uefi.h>
 
 VOID EldenConnectStorage (VOID);
+VOID EldenAcknowledgeBoot (VOID);
 
 #endif
