@@ -1,0 +1,15 @@
+{
+  "platform": "Sm8750",
+  "package": "PakalaPkg",
+  "bootshim": {"UEFI_BASE": "0xD7C00000", "UEFI_SIZE": "0x00400000"},
+  "default_aboot_args": {
+    "header_version": 4,
+    "kernel_compressed": true,
+    "emptyramdisk": false,
+    "cmdline": "",
+    "pagesize": 4096,
+    "base": "0x0",
+    "os_version": "0.0.0",
+    "os_patch_level": ""
+  }
+}
