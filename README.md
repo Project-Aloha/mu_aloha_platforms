@@ -301,6 +301,14 @@ sudo docker run -v $(pwd):/build/ -it mu:v1
 | Xiaomi K60 Pro                       | xiaomi-socrates        | ❌              | None                                               |
 
 
+### Snapdragon 8 Elite (*SM8750*)
+
+#### Lenovo Devices
+
+| Device                               | Target name            | DSDT Support    | Contributors                                       |
+|--------------------------------------|------------------------|-----------------|----------------------------------------------------|
+| Lenovo Legion Y700 Gen4              | lenovo-elden           | ❌              | None                                               |
+
 ### Snapdragon 8 Elite Gen 5 (*SM8850*)
 
 #### Oneplus Devices
