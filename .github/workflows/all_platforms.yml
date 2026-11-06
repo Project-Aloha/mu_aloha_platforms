@@ -71,6 +71,11 @@ jobs:
         target:
           [
             {
+              platform: "IstariPkg",
+              codename: "istari",
+              chipname: "msm8996"
+            },
+            {
               platform: "KaanapaliPkg",
               codename: "kaanapali",
               chipname: "sm8850"
@@ -96,19 +101,9 @@ jobs:
               chipname: "sm7150"
             },
             {
-              platform: "WarlockPkg",
-              codename: "warlock",
-              chipname: "sdm670"
-            },
-            {
               platform: "NapaliPkg",
               codename: "napali",
               chipname: "sdm845"
-            },
-            {
-              platform: "IstariPkg",
-              codename: "istari",
-              chipname: "msm8996"
             },
             {
               platform: "NazgulPkg",
@@ -121,11 +116,6 @@ jobs:
               chipname: "sm7125"
             },
             {
-              platform: "WaipioPkg",
-              codename: "waipio",
-              chipname: "sm8450"
-            },
-            {
               platform: "SurfaceDuo1Pkg",
               codename: "hana",
               chipname: "sm8150",
@@ -134,6 +124,21 @@ jobs:
               platform: "SurfaceDuo2Pkg",
               codename: "lahaina",
               chipname: "sm8350",
+            },
+            {
+              platform: "Tb311fuPkg",
+              codename: "tb311fu",
+              chipname: "sm6225"
+            },
+            {
+              platform: "WarlockPkg",
+              codename: "warlock",
+              chipname: "sdm670"
+            },
+            {
+              platform: "WaipioPkg",
+              codename: "waipio",
+              chipname: "sm8450"
             },
           ]
 
