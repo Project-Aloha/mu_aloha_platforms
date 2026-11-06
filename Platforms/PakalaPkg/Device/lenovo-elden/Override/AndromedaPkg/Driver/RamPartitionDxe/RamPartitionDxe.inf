@@ -1,0 +1,29 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = RamPartitionDxe
+  FILE_GUID                      = 26e06c9c-53d0-0136-5d54-64f38de2fb59
+  MODULE_TYPE                    = DXE_DRIVER
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = RamPartitionDxeInitialize
+
+[Sources]
+  RamPartitionDxe.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  UefiCpuPkg/UefiCpuPkg.dec
+  QcomModulePkg/QcomModulePkg.dec
+
+[LibraryClasses]
+  ArmMmuLib
+  DebugLib
+  DxeServicesTableLib
+  MemoryAllocationLib
+  UefiBootServicesTableLib
+  UefiDriverEntryPoint
+
+[Protocols]
+  gEfiRamPartitionProtocolGuid
+
+[Depex]
+  gEfiRamPartitionProtocolGuid

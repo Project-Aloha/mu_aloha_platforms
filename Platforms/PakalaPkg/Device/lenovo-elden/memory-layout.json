@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "device": "lenovo-elden",
+  "soc": "Sm8750",
+  "binary_source": "image/uefi.elf",
+  "uefi_source_sha256": "ee1e16326200f9420d0a2e561b45c119301d35dc014ada4d3732453c3645e70a",
+  "memory_source": "image/xbl_config.elf",
+  "memory_source_sha256": "b36b854e0d6d69ab4e74cec24829caa3d4353495903026c99c5a1dbea35ab65c",
+  "kernel_compressed": true,
+  "original_dxe_heap": {"base": "0xBD930000", "size": "0x1A6D0000"},
+  "dxe_container": {"base": "0xBD930000", "size": "0x1A2D0000"},
+  "dxe_allocatable": {"base": "0xBD930000", "size": "0x1A290000"},
+  "uefi_stack": {"base": "0xD7BC0000", "size": "0x00040000"},
+  "uefi_fd": {"base": "0xD7C00000", "size": "0x00400000"},
+  "cpu_vectors": {"base": "0xA7600000", "size": "0x00001000"},
+  "kernel_window": {"base": "0xA8000000", "size": "0x10000000"},
+  "display_reserved": {"base": "0xFC800000", "size": "0x02B00000"}
+}

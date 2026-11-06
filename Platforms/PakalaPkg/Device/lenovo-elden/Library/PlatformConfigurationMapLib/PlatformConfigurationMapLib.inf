@@ -1,0 +1,16 @@
+# SPDX-License-Identifier: BSD-2-Clause-Patent
+[Defines]
+  INF_VERSION = 0x00010005
+  BASE_NAME = PlatformConfigurationMapLib
+  FILE_GUID = bce56eac-98b9-4e29-82cd-f81769be849c
+  MODULE_TYPE = BASE
+  VERSION_STRING = 1.0
+  LIBRARY_CLASS = PlatformConfigurationMapLib
+
+[Sources]
+  PlatformConfigurationMapLib.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  ArmPkg/ArmPkg.dec
+  AndromedaPkg/AndromedaPkg.dec
