@@ -1,0 +1,21 @@
+[Defines]
+  INF_VERSION = 0x00010005
+  BASE_NAME = PmicKeysDxe
+  FILE_GUID = 87503222-9D17-4503-AB62-DFC783604302
+  MODULE_TYPE = DXE_DRIVER
+  ENTRY_POINT = EldenPmicKeysEntryPoint
+[Sources]
+  PmicKeysDxe.c
+[Packages]
+  AndromedaPkg/AndromedaPkg.dec
+  MdePkg/MdePkg.dec
+[LibraryClasses]
+  UefiDriverEntryPoint
+  UefiBootServicesTableLib
+  BaseMemoryLib
+[Protocols]
+  gEfiDevicePathProtocolGuid
+  gEfiSimpleTextInProtocolGuid
+  gEfiSimpleTextInputExProtocolGuid
+[Depex]
+  TRUE
