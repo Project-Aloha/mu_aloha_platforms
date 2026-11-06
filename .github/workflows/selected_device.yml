@@ -64,6 +64,7 @@ on:
           - samsung-gts7fewifi
           - samsung-q2q
           - samsung-winner
+          - tb311fu
           - xiaomi-andromeda
           - xiaomi-cepheus
           - xiaomi-haydn
@@ -77,58 +78,42 @@ on:
           - xiaomi-vayu
           - xiaomi-venus
 
-# Indicate that we are running in CI
-env:
-  WM_CI_BUILD: true
+permissions:
+  contents: read
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # Detect which devices need to be built based on the trigger
-  detect:
+  build:
+    name: Build UEFI
     runs-on: ubuntu-latest
-    outputs:
-      devices: ${{ steps.set.outputs.devices }}
+
     steps:
-      - uses: actions/checkout@v6
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 0
-          filter: blob:none
-      - name: Determine devices to build
-        id: set
-        env:
-          BEFORE: ${{ github.event.before }}
+          submodules: recursive
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential uuid-dev iasl git nasm gcc-aarch64-linux-gnu python3 python3-distutils
+
+      - name: Set Device Name
+        id: set-device
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            jq -nc --arg d "${{ inputs.device }}" '[{device: $d, subject: $d}]' \
-              | sed 's/^/devices=/' >> $GITHUB_OUTPUT
+            echo "DEVICE=${{ github.event.inputs.device }}" >> $GITHUB_ENV
           else
-            if [ -n "$BEFORE" ] && git cat-file -e "$BEFORE^{commit}" 2>/dev/null; then
-              base="$BEFORE"
-            else
-              base=$(git rev-list --max-parents=0 HEAD | tail -n 1)
-            fi
-            for sha in $(git rev-list --reverse "$base".."HEAD"); do
-              subject=$(git log -1 --format=%s "$sha")
-              git show --name-only --format= "$sha" \
-                | grep -oP 'Platforms/[^/]+/Device/\K[^/]+' \
-                | sort -u \
-                | while read -r dev; do
-                    jq -nc --arg d "$dev" --arg s "$subject" '{device: $d, subject: $s}'
-                  done
-            done | jq -sc 'group_by(.device) | map(last)' | sed 's/^/devices=/' >> $GITHUB_OUTPUT
+            echo "DEVICE=tb311fu" >> $GITHUB_ENV
           fi
 
-  # This workflow contains a single job called "build"
-  build:
-    needs: detect
-    if: needs.detect.outputs.devices != '[]'
-    strategy:
-      fail-fast: false
-      matrix:
-        include: ${{ fromJson(needs.detect.outputs.devices) }}
-    name: "${{ matrix.device }}: ${{ matrix.subject }}"
-    uses: ./.github/workflows/build_device.yml
-    with:
-      target: ${{ matrix.device }}
-    secrets: inherit
-
+      - name: Build UEFI Image
+        run: |
+          echo "Compilando UEFI para o dispositivo: $DEVICE"
+          # Altere a linha abaixo se o seu script de build for diferente (ex: ./build.sh -d $DEVICE)
+          bash ./build.sh --device $DEVICE
+          
+      - name: Upload Build Artifacts
+        uses: actions/artifacts@v4
+        with:
+          name: uefi-build-${{ env.DEVICE }}
+          path: workspace/Build/**/*.fd
