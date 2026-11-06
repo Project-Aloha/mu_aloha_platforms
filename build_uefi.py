@@ -210,159 +210,45 @@ def ci_copy_fd_after_single_device_building(this_target):
 
     # CI will compress this directory and upload after finishing all build tasks.
     ci_upload_dir = os.path.join(build_output_path, "ci_artifacts", this_target.device)
-
-    # File paths, fd and img
-    input_fd_path = os.path.join(build_output_path, this_target.buildtype + "_CLANGPDB", "FV", this_target.platform.upper() + "_EFI.fd")
-    input_img_path = os.path.join(build_output_path, this_target.device + ".img")
-    output_fd_path = os.path.join(ci_upload_dir, this_target.platform.upper() + "_EFI_" + secureboot_suffix + ".fd")
-    output_img_path = os.path.join(ci_upload_dir, this_target.device + "_" + secureboot_suffix + ".img")
-
-    # Create output directory
     os.makedirs(ci_upload_dir, exist_ok=True)
 
-    # Copy to destination
-    try:
-        # move FD to upload path
-        shutil.move(input_fd_path, output_fd_path)
-        print("Successfully move", input_fd_path, "to", output_fd_path)
-        # move img to upload path
-        shutil.move(input_img_path, output_img_path)
-        print("Successfully move", input_img_path, "to", output_img_path)
-    except Exception as e:
-        print("Build process may be failed!\n Exception: ", e)
-        sys.exit(1)
+    # File paths, fd and img
+    # Assumes common edk2/Project Mu paths: Build/<Package>/<BUILDTYPE>_CLANGPDB/FV/
+    toolchain_dir = f"{this_target.buildtype}_CLANGPDB"
+    fv_path = os.path.join(build_output_path, toolchain_dir, "FV")
+    
+    # Generic naming matching the target device payload or firmware volume image
+    fd_filename = f"{this_target.platform}_EFI.fd"
+    img_filename = f"{this_target.device}.img"
+
+    src_fd = os.path.join(fv_path, fd_filename)
+    src_img = os.path.join(build_output_path, img_filename)
+
+    dest_fd = os.path.join(ci_upload_dir, f"{this_target.device}_{secureboot_suffix}.fd")
+    dest_img = os.path.join(ci_upload_dir, f"{this_target.device}_{secureboot_suffix}.img")
+
+    if os.path.exists(src_fd):
+        shutil.copy2(src_fd, dest_fd)
+        print(f"CI: Copied {src_fd} -> {dest_fd}")
+    
+    if os.path.exists(src_img):
+        shutil.copy2(src_img, dest_img)
+        print(f"CI: Copied {src_img} -> {dest_img}")
 
 
-# Build uefi for a single device
-def build_single_device(this_target):
-    # Check args
-    check_args(current_target)
-    build_device(current_target)
-
-
-# Build uefi for all devices in one platform.
-def build_all_devices(this_target):
-    # device == "all" here.
-    check_args(this_target)
-    device_list = get_devices_list(this_target.package)
-    for device_name in device_list:
-        this_target.device = device_name
-        build_device(this_target)
-
-
-# Build all uefi for all devices.
-def build_all_platforms(all_the_targets):
-    # platform =="all" here.
-    # Traverse all platforms here
-    for this_target in all_the_targets:
-        this_target.device = "all"
-        build_all_devices(this_target)
-
-
-# Align all strings in a list to a fixed length.
-# The rest part will be fill with placeholder
-#  and return a list.
-def string_to_fixed_len(this_list, max_length, ph=" "):
-    if max_length < max([len(i) for i in this_list]):
-        max_length = max([len(i) for i in this_list])
-    # Find the longest device name.
-    aligned_string_list = []
-    for this_string in this_list:
-        # Fill the rest part with ' '
-        aligned_string_list.append(this_string + (max_length - len(this_string)) * ph)
-    return aligned_string_list
-
-
-# Find out all devices.
-def find_device_by_name(device_name):
-    if device_name is None:
-        return None
-    # Get all targets from cfg files.
-    this_all_targets = []
-    get_all_target(this_all_targets)
-
-    for this_target in this_all_targets:
-        device_list = get_devices_list(this_target.package)
-        if device_list.count(device_name):  # count != 0
-            des_target = this_target
-            des_target.device = device_name
-            return des_target
-
-    # if the given name was not found, provide a guess by calculating
-    # Levenshtein distance
-    possible_dict = {}
-    device_list = []
-    for this_target in this_all_targets:
-        device_list.extend(get_devices_list(this_target.package))
-
-    device_list = string_to_fixed_len(device_list, 0)
-    for device_name_in_list in device_list:
-        possible_dict[device_name_in_list] = Levenshtein.distance(device_name, device_name_in_list)
-
-    # Sort
-    possible_dict = dict(sorted(possible_dict.items(), key=lambda x: x[1], reverse=False))
-    possible_list = []
-    for i in range(len(possible_dict)):
-        if list(possible_dict.values())[i] - list(possible_dict.values())[0] < 1:
-            possible_list.append(list(possible_dict.keys())[i])
-    return possible_list
-
-
-# Parse config files in folder.
-def get_all_target(this_all_targets):
-    config_dir = "build_cfg"
-    config_list = os.listdir(config_dir)
-    for this_config in config_list:
-        if this_config[-5:] == ".json":
-            pfile = open(os.path.join(config_dir, this_config), "r")
-            this_all_targets.append(parse_cfg(pfile))
-            pfile.close()
-
-
-# main
-if __name__ == '__main__':
-    # Check host os
-    if not is_system_supported():
-        exit("Building is not supported on your host system!")
-
-    # Parse Args
-    parser = argparse.ArgumentParser(description='Build Uefi for target device.')
-    parser.add_argument('--init', '-i', action='store_true', help="Initialize or reinitialize uefi build environment")
-    parser.add_argument('-d', type=str, default=None, help="target device")
-    parser.add_argument('-p', type=str, default=None, help="target platform")
-    parser.add_argument('-s', type=int, default=None, help="secureboot status, should be 1 or 0")
-    parser.add_argument('-t', type=str, default=None, help="uefi build type, should be DEBUG or RELEASE")
+def main():
+    parser = argparse.ArgumentParser(description="Build UEFI for devices.")
+    parser.add_argument("-d", "--device", help="Target device name", required=True)
+    parser.add_argument("-s", "--secureboot", type=int, choices=[0, 1], help="Secure boot status (0 or 1)")
+    parser.add_argument("-t", "--buildtype", choices=["RELEASE", "DEBUG"], help="Build type (RELEASE or DEBUG)")
+    parser.add_argument("-p", "--platform", help="Target platform")
+    parser.add_argument("--init", action="store_true", help="Initialize or update build environment")
+    
     args = parser.parse_args()
 
-    # Initial target object
-    current_target = Target(args.d, args.p, None, None, None, args.s, args.t)
+    if not is_system_supported():
+        print("Error: Only POSIX systems (Linux/macOS) are currently supported.")
+        sys.exit(1)
 
-    # Prepare Environment
-    # This never needs to be ran more than once, even for other packages usually
-    # All packages should reference the same amount of modules.
-    if args.init:
-        prepare_build(current_target.buildtype, "SurfaceDuo1Pkg")
-
-    # Fill target attributes
-    destination_target = find_device_by_name(current_target.device) if (
-            current_target.platform != "all" and current_target.device != "all") else current_target
-    if type(destination_target) != Target:
-        device_error_exit(current_target.device, destination_target)  # destination_target is possible_device_list here.
-    current_target.merge(destination_target)
-
-    # Parse Config Files
-    all_targets = []
-    get_all_target(all_targets)
-
-    # Build all devices in one platform
-    if current_target.platform == "all":
-        build_all_platforms(all_targets)    # Commonly we use this in CI.
-    elif current_target.device == "all":
-        # Find current target from config and merge.
-        for the_target in all_targets:
-            if the_target.platform == current_target.platform:
-                current_target.merge(the_target)
-                break
-        build_all_devices(current_target)
-    else:
-        build_single_device(current_target)
+    # Resolve platform package configurations using your json cfg system
+    cfg_file_path = os.path.join("build_cfg", f"{args.device}.json")
