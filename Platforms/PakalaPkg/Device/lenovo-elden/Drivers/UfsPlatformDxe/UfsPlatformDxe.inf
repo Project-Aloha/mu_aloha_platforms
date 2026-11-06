@@ -1,0 +1,27 @@
+[Defines]
+  INF_VERSION = 0x0001001B
+  BASE_NAME = UfsPlatformDxe
+  FILE_GUID = 87503222-9D17-4503-AB62-DFC783604304
+  MODULE_TYPE = DXE_DRIVER
+  ENTRY_POINT = EldenUfsPlatformEntryPoint
+[Sources]
+  UfsPlatformDxe.c
+  UfsLink.c
+  UfsLink.h
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+[LibraryClasses]
+  UefiDriverEntryPoint
+  UefiBootServicesTableLib
+  BaseLib
+  NonDiscoverableDeviceRegistrationLib
+  IoLib
+  TimerLib
+[Protocols]
+  gEdkiiUfsHcPlatformProtocolGuid
+  gEfiPciIoProtocolGuid
+[Guids]
+  gEfiEventExitBootServicesGuid
+[Depex]
+  gEfiCpuArchProtocolGuid
