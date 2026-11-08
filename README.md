@@ -40,7 +40,7 @@ Please see https://aloha.firmware.icu/ for some tutorials.
   - mono-devel
   - git-core, git
   - build-essential
-  - clangpdb (or higher), llvm, ggc-aarch64-linux-gnu
+  - clangpdb (or higher), llvm, gcc-aarch64-linux-gnu
 - Exported CLANGPDB_BIN environment variable pointing to LLVM 10 binary folder
 - Exported CLANGPDB_AARCH64_PREFIX variable equalling to aarch64-linux-gnu-
 
