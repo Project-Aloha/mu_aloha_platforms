@@ -9,6 +9,7 @@ SPDX-License-Identifier: BSD-2-Clause-Patent
 #include <Uefi.h>
 
 #include <Protocol/DevicePath.h>
+#include <Protocol/EFIScm.h>
 
 #include <Library/AcpiPlatformUpdateLib.h>
 #include <Library/BaseMemoryLib.h>
@@ -22,6 +23,9 @@ SPDX-License-Identifier: BSD-2-Clause-Patent
 #include <Library/UefiLib.h>
 
 #include <Configuration/BootDevices.h>
+
+EFI_EVENT          EfiExitBootServicesEvent = (EFI_EVENT)NULL;
+QCOM_SCM_PROTOCOL *pSCMProtocol             = NULL;
 
 //
 // Predefined platform default console device path
@@ -78,6 +82,44 @@ PlatformIsDevicePathUsb(IN EFI_DEVICE_PATH_PROTOCOL *DevicePath)
 
 /* Dummy function needed for event notification callback */
 STATIC VOID DummyNotify(IN EFI_EVENT Event, IN VOID *Context) {}
+
+VOID EFIAPI PlatformBDSExitBSCallback(IN EFI_EVENT Event, IN VOID *Context)
+{
+  EFI_STATUS Status = EFI_SUCCESS;
+
+  Status =
+      gBS->LocateProtocol(&gQcomScmProtocolGuid, NULL, (VOID **)&pSCMProtocol);
+  if (EFI_ERROR(Status) || pSCMProtocol == NULL) {
+    DEBUG((EFI_D_WARN, "Could not locate pSCM protocol\n"));
+  }
+
+  /* This is added after the flushing of NV vars as this callback will
+   * deregister the Listeners, hence FLushing to RPMB/GPT will fail after this
+   * point until HLOS SCM driver (only RPMB is supported) is loaded.
+   */
+  Status = pSCMProtocol->ScmExitBootServicesHandler(pSCMProtocol);
+  if (EFI_ERROR(Status)) {
+    DEBUG((EFI_D_WARN, "Scm EBS Callback failed\n"));
+  }
+
+  ASSERT_EFI_ERROR(Status);
+}
+
+/**
+  Library constructor which registers for the Exit boot services callback
+**/
+EFI_STATUS
+EFIAPI
+RegisterEBSCallback(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE *SystemTable)
+{
+  EFI_STATUS Status = EFI_SUCCESS;
+  // Register to Exit Boot Service Event
+  Status = gBS->CreateEventEx(
+      EVT_NOTIFY_SIGNAL, TPL_CALLBACK, PlatformBDSExitBSCallback, NULL,
+      &gEfiEventExitBootServicesGuid, &EfiExitBootServicesEvent);
+  ASSERT_EFI_ERROR(Status);
+  return Status;
+}
 
 /**
 Library function used to provide the list of platform devices that MUST be
