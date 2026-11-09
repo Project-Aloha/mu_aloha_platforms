@@ -110,7 +110,7 @@ VOID EFIAPI PlatformBDSExitBSCallback(IN EFI_EVENT Event, IN VOID *Context)
 **/
 EFI_STATUS
 EFIAPI
-RegisterEBSCallback(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE *SystemTable)
+RegisterEBSCallback()
 {
   EFI_STATUS Status = EFI_SUCCESS;
   // Register to Exit Boot Service Event
@@ -150,6 +150,8 @@ EFI_DEVICE_PATH_PROTOCOL **EFIAPI GetPlatformConnectList(VOID)
     gBS->SignalEvent(UsbConfigEvt);
     gBS->CloseEvent(UsbConfigEvt);
   }
+
+  RegisterEBSCallback();
 
   // We do not have any device to advertise for connection before BDS begins
   return NULL;
