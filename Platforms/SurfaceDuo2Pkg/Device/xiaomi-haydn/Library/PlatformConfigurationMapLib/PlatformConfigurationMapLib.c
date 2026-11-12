@@ -12,7 +12,7 @@ static CONFIGURATION_DESCRIPTOR_EX gDeviceConfigurationDescriptorEx[] = {
     {"EarlyInitCoreCnt", 2},
     {"EnableACPIFallback", 0x0},
     {"EnableDisplayImageFv", 0x0},
-    {"EnableDisplayThread", 0x1},
+    {"EnableDisplayThread", 0x0},
     {"EnableLogFsSyncInRetail", 0x0},
     {"EnableMultiCoreFvDecompression", 1},
     {"EnableMultiThreading", 0},
