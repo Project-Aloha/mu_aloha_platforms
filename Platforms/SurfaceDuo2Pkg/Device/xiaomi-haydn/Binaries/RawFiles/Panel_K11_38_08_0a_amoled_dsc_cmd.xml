@@ -39,7 +39,7 @@
  <DSIDSCProfileID>4</DSIDSCProfileID>
  <DSIDSCSliceWidth>540</DSIDSCSliceWidth>
  <DSIDSCSliceHeight>8</DSIDSCSliceHeight>
- <DSIDSCSlicePerPacket>1</DSIDSCSlicePerPacket>
+ <DSIDSCSlicePerPacket>2</DSIDSCSlicePerPacket>
  <DSIBitClockFrequency>1100000000</DSIBitClockFrequency>
  <DSICmdSwapInterface>False</DSICmdSwapInterface>
  <DSICmdUsingTrigger>False</DSICmdUsingTrigger>
