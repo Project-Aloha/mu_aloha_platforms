@@ -18,7 +18,7 @@ xmlschema==4.3.1
 regex==2026.6.28
 pygount==3.2.0
 pywin32==312; sys_platform == 'win32'
-setuptools==84.0.0
+setuptools==84.2.1
 poetry==2.5.1
 fdt==0.3.3
 
